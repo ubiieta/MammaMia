@@ -1,272 +1,266 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="es">
-<head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with FoodHut landing page.">
-    <meta name="author" content="Devcrud">
-    <title>Mamma mia! | Pizzas auténticas</title>
-   
-    <!-- font icons -->
-    <link rel="stylesheet" href="static/assets/vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="static/assets/vendors/themify-icons/css/themify-icons.css">
+    <head title="MammaMia">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Start your development with FoodHut landing page.">
+        <meta name="author" content="Devcrud">
 
+        <title>
+            Mamma mia! | Pizzas auténticas
+        </title>
 
-    <link rel="stylesheet" href="static/assets/vendors/animate/animate.css">
-    <link rel="stylesheet" href="static/assets/vendors/animate/animate.css">
+        <!-- font icons -->
+        <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.css' %}">
 
-    <!-- Bootstrap + FoodHut main styles -->
-    <link rel="stylesheet" href="static/static/assets/css/foodhut.css">
-	<link rel="stylesheet" href="static/assets/css/foodhut.css">
-</head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    
-    <!-- Navbar -->
-    <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix" data-offset-top="10">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">Acerca de nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#gallary">Pizzas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#book-table">Reservar mesa</a>
-                </li>
-            </ul>
-            <a class="navbar-brand m-auto" href="#">
-                <img src="static/assets/imgs/logo.png" class="brand-img" alt="">
-                <span class="brand-txt">Mamma mia</span>
-            </a>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#blog">Blog<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#testmonial">Reseñas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contactanos </a>
-                </li>
-                <li class="nav-item">
-                    <a href="components.html" class="btn btn-primary ml-xl-4">Components</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!-- header -->
-    <header id="home" class="header">
-        <div class="overlay text-white text-center">
-            <h1 class="display-2 font-weight-bold my-3">Mamma mia!</h1>
-            <h2 class="display-4 mb-5">Pizzas auténticas</h2>
-            <a class="btn btn-lg btn-primary" href="#gallary">Nuestro menu</a>
-        </div>
-    </header>
+        <!-- Bootstrap + FoodHut main styles -->
+        <link rel="stylesheet" href="{% static 'assets/css/foodhut.css' %}">
+    </head>
 
-    <!--  About Section  -->
-    <div id="about" class="container-fluid wow fadeIn" id="about"data-wow-duration="1.5s">
-        <div class="row">
-            <div class="col-lg-6 has-img-bg"></div>
-            <div class="col-lg-6">
-                <div class="row justify-content-center">
-                    <div class="col-sm-8 py-5 my-5">
-                        <h2 class="mb-4">Acerca de nosotros</h2>
+    <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
-                        <p>Bienvenidos a Mamma Mia, donde la tradición italiana se encuentra con la innovación culinaria. Nuestra pizzería se enorgullece de utilizar solo los ingredientes más auténticos, desde la                        harina de trigo italiano hasta el queso mozzarella fresco, todos seleccionados con esmero. Pero no nos detenemos ahí: nuestras recetas reinventan clásicos atemporales, fusionando sabores tradicionales con toques modernos. </p>
-                        
-                        <p> Desde nuestra masa artesanal, fermentada lentamente para lograr una textura perfecta, hasta combinaciones únicas de ingredientes frescos y salsas caseras, cada pizza cuenta una historia. En Mamma Mia, cada bocado es un viaje a Italia, pero con un giro contemporáneo que deleitará tu paladar. Ven a disfrutar de una experiencia gastronómica que celebra lo mejor de la cocina italiana, con un enfoque creativo y apasionado. ¡Te esperamos! </p>
+        <!-- Navbar -->
+        <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix" data-offset-top="10">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Acerca de nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallary">Pizzas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#book-table">Reservar mesa</a>
+                    </li>
+                </ul>
+                <a class="navbar-brand m-auto" href="#">
+                    <img src="{% static 'assets/imgs/logo.png' %}" class="brand-img" alt="Logo de Mamma Mia">
+                    <span class="brand-txt">Mamma mia</span>
+                </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testmonial">Reseñas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contactanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="components.html" class="btn btn-primary ml-xl-4">Components</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
+        <!-- Header -->
+        <header id="home" class="header">
+            <div class="overlay text-white text-center">
+                <h1 class="display-2 font-weight-bold my-3">Mamma mia!</h1>
+                <h2 class="display-4 mb-5">Pizzas auténticas</h2>
+                <a class="btn btn-lg btn-primary" href="#gallary">Nuestro menú</a>
+            </div>
+        </header>
 
+        <!-- About Section -->
+        <div id="about" class="container-fluid wow fadeIn" data-wow-duration="1.5s">
+            <div class="row">
+                <div class="col-lg-6 has-img-bg"></div>
+                <div class="col-lg-6">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-8 py-5 my-5">
+                            <h2 class="mb-4">Acerca de nosotros</h2>
+                            <p>Bienvenidos a Mamma Mia, donde la tradición italiana se encuentra con la innovación culinaria. Nuestra pizzería se enorgullece de utilizar solo los ingredientes más auténticos, desde la harina de trigo italiano hasta el queso mozzarella fresco, todos seleccionados con esmero. Pero no nos detenemos ahí: nuestras recetas reinventan clásicos atemporales, fusionando sabores tradicionales con toques modernos.</p>
+                            <p>Desde nuestra masa artesanal, fermentada lentamente para lograr una textura perfecta, hasta combinaciones únicas de ingredientes frescos y salsas caseras, cada pizza cuenta una historia. En Mamma Mia, cada bocado es un viaje a Italia, pero con un giro contemporáneo que deleitará tu paladar. Ven a disfrutar de una experiencia gastronómica que celebra lo mejor de la cocina italiana, con un enfoque creativo y apasionado. ¡Te esperamos!</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!--  Seccion masas de pizza  -->
-    <div id="gallary" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
-        <h2 class="section-title">NUESTRAS MASAS</h2>
-    </div>
-    <div class="gallary row">
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="static/assets/imgs/gallary-1.jpg" alt="foto1" class="gallary-img">
-            <a href="#" class="gallary-overlay">
-                <i class="gallary-icon ti-plus"></i>
-            </a>
+        <!-- Pizza Base Section -->
+        <div id="gallary" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
+            <h2 class="section-title">NUESTRAS MASAS</h2>
         </div>
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="static/assets/imgs/gallary-2.jpg" alt="foto2" class="gallary-img">
-            <a href="#" class="gallary-overlay">
-                <i class="gallary-icon ti-plus"></i>
-            </a>
-        </div>
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="static/assets/imgs/gallary-3.jpg" alt="foto3" class="gallary-img">
-            <a href="#" class="gallary-overlay">
-                <i class="gallary-icon ti-plus"></i>
-            </a>
-        </div>
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="static/assets/imgs/gallary-4.jpg" alt="foto3" class="gallary-img">
-            <a href="#" class="gallary-overlay">
-                <i class="gallary-icon ti-plus"></i>
-            </a>
-        </div>
-    </div>
-
-
-    <!--  Seccion ingredientes de pizza  -->
-    <div id="gallary" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
-        <h2 class="section-title">NUESTROS INGREDIENTES</h2>
-    </div>
-    <div class="gallary row">
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="static/assets/imgs/gallary-1.jpg" alt="foto1" class="gallary-img">
-            <a href="#" class="gallary-overlay">
-                <i class="gallary-icon ti-plus"></i>
-            </a>
-        </div>
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="static/assets/imgs/gallary-2.jpg" alt="foto2" class="gallary-img">
-            <a href="#" class="gallary-overlay">
-                <i class="gallary-icon ti-plus"></i>
-            </a>
-        </div>
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="static/assets/imgs/gallary-3.jpg" alt="foto3" class="gallary-img">
-            <a href="#" class="gallary-overlay">
-                <i class="gallary-icon ti-plus"></i>
-            </a>
-        </div>
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="static/assets/imgs/gallary-4.jpg" alt="foto3" class="gallary-img">
-            <a href="#" class="gallary-overlay">
-                <i class="gallary-icon ti-plus"></i>
-            </a>
-        </div>
-    </div>
-
-    <!-- book a table Section  -->
-    <div class="container-fluid has-bg-overlay text-center text-light has-height-lg middle-items" id="book-table">
-        <div class="">
-            <h2 class="section-title mb-5">RESERVA MESA</h2>
-            <div class="row mb-5">
-                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-                    <input type="email" id="booktable" class="form-control form-control-lg custom-form-control" placeholder="EMAIL">
-                </div>
-                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-                    <input type="number" id="booktable" class="form-control form-control-lg custom-form-control" placeholder="NUMERO DE COMENSALES" max="20" min="0">
-                </div>
-                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-                    <input type="time" id="booktable" class="form-control form-control-lg custom-form-control" placeholder="EMAIL">
-                </div>
-                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-                    <input type="date" id="booktable" class="form-control form-control-lg custom-form-control" placeholder="12/12/12">
-                </div>
+        <div class="gallary row">
+            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+                <img src="{% static 'assets/imgs/gallary-1.jpg' %}" alt="Foto de masa 1" class="gallary-img">
+                <a href="#" class="gallary-overlay">
+                    <i class="gallary-icon ti-plus"></i>
+                </a>
             </div>
-            <a href="#" class="btn btn-lg btn-primary" id="rounded-btn">BUSCAR MESA</a>
+            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+                <img src="{% static 'assets/imgs/gallary-2.jpg' %}" alt="Foto de masa 2" class="gallary-img">
+                <a href="#" class="gallary-overlay">
+                    <i class="gallary-icon ti-plus"></i>
+                </a>
+            </div>
+            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+                <img src="{% static 'assets/imgs/gallary-3.jpg' %}" alt="Foto de masa 3" class="gallary-img">
+                <a href="#" class="gallary-overlay">
+                    <i class="gallary-icon ti-plus"></i>
+                </a>
+            </div>
+            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+                <img src="{% static 'assets/imgs/gallary-4.jpg' %}" alt="Foto de masa 4" class="gallary-img">
+                <a href="#" class="gallary-overlay">
+                    <i class="gallary-icon ti-plus"></i>
+                </a>
+            </div>
         </div>
-    </div>
 
-    
+        <!-- Ingredients Section -->
+        <div id="ingredients" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
+            <h2 class="section-title">NUESTROS INGREDIENTES</h2>
+        </div>
+        <div class="gallary row">
+            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+                <img src="{% static 'assets/imgs/gallary-1.jpg' %}" alt="Ingrediente 1" class="gallary-img">
+                <a href="#" class="gallary-overlay">
+                    <i class="gallary-icon ti-plus"></i>
+                </a>
+            </div>
+            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+                <img src="{% static 'assets/imgs/gallary-2.jpg' %}" alt="Ingrediente 2" class="gallary-img">
+                <a href="#" class="gallary-overlay">
+                    <i class="gallary-icon ti-plus"></i>
+                </a>
+            </div>
+            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+                <img src="{% static 'assets/imgs/gallary-3.jpg' %}" alt="Ingrediente 3" class="gallary-img">
+                <a href="#" class="gallary-overlay">
+                    <i class="gallary-icon ti-plus"></i>
+                </a>
+            </div>
+            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+                <img src="{% static 'assets/imgs/gallary-4.jpg' %}" alt="Ingrediente 4" class="gallary-img">
+                <a href="#" class="gallary-overlay">
+                    <i class="gallary-icon ti-plus"></i>
+                </a>
+            </div>
+        </div>
 
-    <!-- REVIEWS Section  -->
-    <div id="testmonial" class="container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
-        <h2 class="section-title my-5 text-center">RESEÑAS</h2>
-        <div class="row mt-3 mb-5">
-            <div class="col-md-4 my-3 my-md-0">
-                <div class="testmonial-card">
-                    <h3 class="testmonial-title">John Doe</h3>
-                    <h6 class="testmonial-subtitle">Web Designer</h6>
-                    <div class="testmonial-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nobis eligendi, quaerat accusamus ipsum sequi dignissimos consequuntur blanditiis natus. Aperiam!</p>
+        <!-- Book a Table Section -->
+        <div class="container-fluid has-bg-overlay text-center text-light has-height-lg middle-items" id="book-table">
+            <div class="">
+                <h2 class="section-title mb-5">RESERVA MESA</h2>
+                <div class="row mb-5">
+                    <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                        <input type="email" id="booktable-email" class="form-control form-control-lg custom-form-control" placeholder="EMAIL">
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                        <input type="number" id="booktable-guests" class="form-control form-control-lg custom-form-control" placeholder="NUMERO DE COMENSALES" max="20" min="1">
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                        <input type="time" id="booktable-time" class="form-control form-control-lg custom-form-control">
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                        <input type="date" id="booktable-date" class="form-control form-control-lg custom-form-control">
+                    </div>
+                </div>
+                <a href="#" class="btn btn-lg btn-primary" id="rounded-btn">BUSCAR MESA</a>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div id="testmonial" class="container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
+            <h2 class="section-title my-5 text-center">RESEÑAS</h2>
+            <div class="row mt-3 mb-5">
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="testmonial-card">
+                        <h3 class="testmonial-title">John Doe</h3>
+                        <h6 class="testmonial-subtitle">Web Designer</h6>
+                        <div class="testmonial-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nobis eligendi, quaerat accusamus ipsum sequi dignissimos consequuntur blanditiis natus. Aperiam!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="testmonial-card">
+                        <h3 class="testmonial-title">Steve Thomas</h3>
+                        <h6 class="testmonial-subtitle">UX/UI Designer</h6>
+                        <div class="testmonial-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum minus obcaecati cum eligendi perferendis magni dolorum ipsum magnam, sunt reiciendis natus. Aperiam!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="testmonial-card">
+                        <h3 class="testmonial-title">Miranda Joy</h3>
+                        <h6 class="testmonial-subtitle">Graphic Designer</h6>
+                        <div class="testmonial-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, nam. Earum nobis eligendi, dignissimos consequuntur blanditiis natus. Aperiam!</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 my-3 my-md-0">
-                <div class="testmonial-card">
-                    <h3 class="testmonial-title">Steve Thomas</h3>
-                    <h6 class="testmonial-subtitle">UX/UI Designer</h6>
-                    <div class="testmonial-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum minus obcaecati cum eligendi perferendis magni dolorum ipsum magnam, sunt reiciendis natus. Aperiam!</p>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="container-fluid bg-dark text-light border-top wow fadeIn">
+            <div class="row">
+                <div class="col-md-6 px-0">
+                    <div id="map" style="width: 100%; height: 100%; min-height: 400px"></div>
+                </div>
+                <div class="col-md-6 px-5 has-height-lg middle-items">
+                    <h3>ENCUENTRANOS</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, laboriosam doloremque odio delectus, sunt magnam laborum impedit molestiae, magni quae ipsum, ullam eos! Alias suscipit impedit et, adipisci illo quam.</p>
+                    <div class="text-muted">
+                        <p><span class="ti-location-pin pr-3"></span> 12345 Fake ST NoWhere, AB Country</p>
+                        <p><span class="ti-support pr-3"></span> (123) 456-7890</p>
+                        <p><span class="ti-email pr-3"></span> info@website.com</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 my-3 my-md-0">
-                <div class="testmonial-card">
-                    <h3 class="testmonial-title">Miranda Joy</h3>
-                    <h6 class="testmonial-subtitle">Graphic Designer</h6>
-                    <div class="testmonial-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, nam. Earum nobis eligendi, dignissimos consequuntur blanditiis natus. Aperiam!</p>
-                    </div>
+        </div>
+
+        <!-- Page Footer -->
+        <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>ENVIANOS UN MAIL</h3>
+                    <p class="text-muted">info@website.com</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>LLAMANOS</h3>
+                    <p class="text-muted">(123) 456-7890</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>ENCUENTRANOS</h3>
+                    <p class="text-muted">12345 Fake ST NoWhere AB Country</p>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- CONTACT Section  -->
-    <div id="contact" class="container-fluid bg-dark text-light border-top wow fadeIn">
-        <div class="row">
-            <div class="col-md-6 px-0">
-                <div id="map" style="width: 100%; height: 100%; min-height: 400px"></div>
-            </div>
-            <div class="col-md-6 px-5 has-height-lg middle-items">
-                <h3>ENCUENTRANOS</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, laboriosam doloremque odio delectus, sunt magnam laborum impedit molestiae, magni quae ipsum, ullam eos! Alias suscipit impedit et, adipisci illo quam.</p>
-                <div class="text-muted">
-                    <p><span class="ti-location-pin pr-3"></span> 12345 Fake ST NoWhere, AB Country</p>
-                    <p><span class="ti-support pr-3"></span> (123) 456-7890</p>
-                    <p><span class="ti-email pr-3"></span>info@website.com</p>
-                </div>
-            </div>
+        <div class="bg-dark text-light text-center border-top wow fadeIn">
+            <p class="mb-0 py-3 text-muted small">&copy; Copyright <script>document.write(new Date().getFullYear())</script> Made with <i class="ti-heart text-danger"></i> By <a href="http://devcrud.com">DevCRUD</a></p>
         </div>
-    </div>
+        <!-- End of Page Footer -->
 
-    <!-- page footer  -->
-    <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
-        <div class="row">
-            <div class="col-sm-4">
-                <h3>ENVIANOS UN MAIL</h3>
-                <P class="text-muted">info@website.com</P>
-            </div>
-            <div class="col-sm-4">
-                <h3>LLAMANOS</h3>
-                <P class="text-muted">(123) 456-7890</P>
-            </div>
-            <div class="col-sm-4">
-                <h3>ENCUENTRANOS</h3>
-                <P class="text-muted">12345 Fake ST NoWhere AB Country</P>
-            </div>
-        </div>
-    </div>
-    <div class="bg-dark text-light text-center border-top wow fadeIn">
-        <p class="mb-0 py-3 text-muted small">&copy; Copyright <script>document.write(new Date().getFullYear())</script> Made with <i class="ti-heart text-danger"></i> By <a href="http://devcrud.com">DevCRUD</a></p>
-    </div>
-    <!-- end of page footer -->
+        <!-- Core Scripts -->
+        <script src="{% static 'assets/vendors/jquery/jquery-3.4.1.js' %}"></script>
+        <script src="{% static 'assets/vendors/bootstrap/bootstrap.bundle.js' %}"></script>
 
-	<!-- core  -->
-    <script src="static/assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="static/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+        <!-- Bootstrap Affix -->
+        <script src="{% static 'assets/vendors/bootstrap/bootstrap.affix.js' %}"></script>
 
-    <!-- bootstrap affix -->
-    <script src="static/assets/vendors/bootstrap/bootstrap.affix.js"></script>
+        <!-- Wow.js -->
+        <script src="{% static 'assets/vendors/wow/wow.js' %}"></script>
 
-    <!-- wow.js -->
-    <script src="static/assets/vendors/wow/wow.js"></script>
-    
-    <!-- google maps -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
+        <!-- Google Maps -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
 
-    <!-- FoodHut js -->
-    <script src="static/assets/js/foodhut.js"></script>
+        <!-- FoodHut JS -->
+        <script src="{% static 'assets/js/foodhut.js' %}"></script>
 
-</body>
+    </body>
 </html>
