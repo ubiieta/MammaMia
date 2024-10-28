@@ -9,16 +9,16 @@
     <title>Mamma mia! | Pizzas auténticas</title>
    
     <!-- font icons -->
-    <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
-    {% comment %} <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css"> {% endcomment %}
+    <link rel="stylesheet" href="static/assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="static/assets/vendors/themify-icons/css/themify-icons.css">
 
 
-    <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.css' %}">
-    {% comment %} <link rel="stylesheet" href="assets/vendors/animate/animate.css"> {% endcomment %}
+    <link rel="stylesheet" href="static/assets/vendors/animate/animate.css">
+    <link rel="stylesheet" href="static/assets/vendors/animate/animate.css">
 
     <!-- Bootstrap + FoodHut main styles -->
-    <link rel="stylesheet" href="{% static 'assets/css/foodhut.css' %}">
-	{% comment %} <link rel="stylesheet" href="assets/css/foodhut.css"> {% endcomment %}
+    <link rel="stylesheet" href="static/static/assets/css/foodhut.css">
+	<link rel="stylesheet" href="static/assets/css/foodhut.css">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
     
@@ -43,7 +43,7 @@
                 </li>
             </ul>
             <a class="navbar-brand m-auto" href="#">
-                <img src="assets/imgs/logo.png" class="brand-img" alt="">
+                <img src="static/assets/imgs/logo.png" class="brand-img" alt="">
                 <span class="brand-txt">Mamma mia</span>
             </a>
             <ul class="navbar-nav">
@@ -79,47 +79,75 @@
                 <div class="row justify-content-center">
                     <div class="col-sm-8 py-5 my-5">
                         <h2 class="mb-4">Acerca de nosotros</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, quisquam accusantium nostrum modi, nemo, officia veritatis ipsum facere maxime assumenda voluptatum enim! Labore maiores placeat impedit, vero sed est voluptas!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita alias dicta autem, maiores doloremque quo perferendis, ut obcaecati harum, <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum necessitatibus iste,
-                        nulla recusandae porro minus nemo eaque cum repudiandae quidem voluptate magnam voluptatum? <br>Nobis, saepe sapiente omnis qui eligendi pariatur. quis voluptas. Assumenda facere adipisci quaerat. Illum doloremque quae omnis vitae.</p>
-                        <p><b>Lonsectetur adipisicing elit. Blanditiis aspernatur, ratione dolore vero asperiores explicabo.</b></p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ab itaque modi, reprehenderit fugit soluta, molestias optio repellat incidunt iure sed deserunt nemo magnam rem explicabo vitae. Cum, nostrum, quidem.</p>
+
+                        <p>Bienvenidos a Mamma Mia, donde la tradición italiana se encuentra con la innovación culinaria. Nuestra pizzería se enorgullece de utilizar solo los ingredientes más auténticos, desde la                        harina de trigo italiano hasta el queso mozzarella fresco, todos seleccionados con esmero. Pero no nos detenemos ahí: nuestras recetas reinventan clásicos atemporales, fusionando sabores tradicionales con toques modernos. </p>
+                        
+                        <p> Desde nuestra masa artesanal, fermentada lentamente para lograr una textura perfecta, hasta combinaciones únicas de ingredientes frescos y salsas caseras, cada pizza cuenta una historia. En Mamma Mia, cada bocado es un viaje a Italia, pero con un giro contemporáneo que deleitará tu paladar. Ven a disfrutar de una experiencia gastronómica que celebra lo mejor de la cocina italiana, con un enfoque creativo y apasionado. ¡Te esperamos! </p>
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--  gallary Section  -->
+    <!--  Seccion masas de pizza  -->
     <div id="gallary" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
-        <h2 class="section-title">NUESTRO MENU</h2>
+        <h2 class="section-title">NUESTRAS MASAS</h2>
     </div>
     <div class="gallary row">
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            {% comment %} <img src="imgs/gallary-1.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img"> {% endcomment %}
+            <img src="static/assets/imgs/gallary-1.jpg" alt="foto1" class="gallary-img">
             <a href="#" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            {% comment %} <img src="assets/imgs/gallary-2.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img"> {% endcomment %}
+            <img src="static/assets/imgs/gallary-2.jpg" alt="foto2" class="gallary-img">
             <a href="#" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            {% comment %} <img src="assets/imgs/gallary-3.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img"> {% endcomment %}
+            <img src="static/assets/imgs/gallary-3.jpg" alt="foto3" class="gallary-img">
             <a href="#" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            {% comment %} <img src="assets/imgs/gallary-4.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img"> {% endcomment %}
+            <img src="static/assets/imgs/gallary-4.jpg" alt="foto3" class="gallary-img">
+            <a href="#" class="gallary-overlay">
+                <i class="gallary-icon ti-plus"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <!--  Seccion ingredientes de pizza  -->
+    <div id="gallary" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
+        <h2 class="section-title">NUESTROS INGREDIENTES</h2>
+    </div>
+    <div class="gallary row">
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="static/assets/imgs/gallary-1.jpg" alt="foto1" class="gallary-img">
             <a href="#" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            {% comment %} <img src="assets/imgs/gallary-5.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img"> {% endcomment %}
+            <img src="static/assets/imgs/gallary-2.jpg" alt="foto2" class="gallary-img">
+            <a href="#" class="gallary-overlay">
+                <i class="gallary-icon ti-plus"></i>
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="static/assets/imgs/gallary-3.jpg" alt="foto3" class="gallary-img">
+            <a href="#" class="gallary-overlay">
+                <i class="gallary-icon ti-plus"></i>
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="static/assets/imgs/gallary-4.jpg" alt="foto3" class="gallary-img">
             <a href="#" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
@@ -148,92 +176,7 @@
         </div>
     </div>
 
-    <!-- BLOG Section  -->
-    <div id="blog" class="container-fluid bg-dark text-light py-5 text-center wow fadeIn">
-        <h2 class="section-title py-5">EVENTOS DE MAMMA MIA</h2>
-        <div class="row justify-content-center">
-            <div class="col-sm-7 col-md-4 mb-5">
-                <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#foods" role="tab" aria-controls="pills-home" aria-selected="true">PIZZAS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#juices" role="tab" aria-controls="pills-profile" aria-selected="false">POSTRES</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="foods" role="tabpanel" aria-labelledby="pills-home-tab">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card bg-transparent border my-3 my-md-0">
-                            <img src="assets/imgs/blog-1.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
-                            <div class="card-body">
-                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">$5</a></h1>
-                                <h4 class="pt20 pb20">Reiciendis Laborum </h4>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card bg-transparent border my-3 my-md-0">
-                            <img src="assets/imgs/blog-2.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
-                            <div class="card-body">
-                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">$12</a></h1>
-                                <h4 class="pt20 pb20">Adipisci Totam</h4>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card bg-transparent border my-3 my-md-0">
-                            <img src="assets/imgs/blog-3.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
-                            <div class="card-body">
-                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">$8</a></h1>
-                                <h4 class="pt20 pb20">Dicta Deserunt</h4>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="juices" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <div class="row">
-                    <div class="col-md-4 my-3 my-md-0">
-                        <div class="card bg-transparent border">
-                            <img src="assets/imgs/blog-4.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
-                            <div class="card-body">
-                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">$15</a></h1>
-                                <h4 class="pt20 pb20">Consectetur Adipisicing Elit</h4>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 my-3 my-md-0">
-                        <div class="card bg-transparent border">
-                            <img src="assets/imgs/blog-5.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
-                            <div class="card-body">
-                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">$29</a></h1>
-                                <h4 class="pt20 pb20">Ullam Laboriosam</h4>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 my-3 my-md-0">
-                        <div class="card bg-transparent border">
-                            <img src="assets/imgs/blog-6.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
-                            <div class="card-body">
-                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">$3</a></h1>
-                                <h4 class="pt20 pb20">Fugit Ipsam</h4>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <!-- REVIEWS Section  -->
     <div id="testmonial" class="container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
@@ -296,7 +239,7 @@
             </div>
             <div class="col-sm-4">
                 <h3>LLAMANOS</h3>
-                <P class="text-muted">(123) 456-7890</P
+                <P class="text-muted">(123) 456-7890</P>
             </div>
             <div class="col-sm-4">
                 <h3>ENCUENTRANOS</h3>
@@ -310,20 +253,20 @@
     <!-- end of page footer -->
 
 	<!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="static/assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="static/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 
     <!-- bootstrap affix -->
-    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <script src="static/assets/vendors/bootstrap/bootstrap.affix.js"></script>
 
     <!-- wow.js -->
-    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="static/assets/vendors/wow/wow.js"></script>
     
     <!-- google maps -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
 
     <!-- FoodHut js -->
-    <script src="assets/js/foodhut.js"></script>
+    <script src="static/assets/js/foodhut.js"></script>
 
 </body>
 </html>
