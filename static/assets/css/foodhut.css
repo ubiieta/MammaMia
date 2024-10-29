@@ -82,7 +82,7 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  
 }
 
 p {
@@ -11184,7 +11184,7 @@ pre {
   visibility: hidden;
   -webkit-transition: all 0.2s linear 0s;
   transition: all 0.2s linear 0s;
-  font-family: "Oswald", sans-serif;
+  font-family:Nightingale;
 }
 
 .affix {
@@ -11308,6 +11308,35 @@ pre {
   z-index: -2;
 }
 
+
+.has-bg-overlay-gray {
+  position: relative;
+}
+
+.has-bg-overlay-gray:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../imgs/main.jpg) no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+  opacity: .3;
+}
+
+.has-bg-overlay-gray:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #343a40;
+  z-index: -2;
+}
+
 .middle-items {
   display: -webkit-flex;
   display: -ms-flex;
@@ -11325,6 +11354,22 @@ pre {
           justify-content: center;
 }
 
+
+
+.section-title-background{
+  font-size: 4rem;
+  background: rgba(33, 37, 41, 0.85);
+  background: url(../imgs/main.jpg) no-repeat center center fixed;
+  background-size: cover;
+
+
+}
+
+.grey-overlay{
+  background-color: rgba(33, 37, 41, 0.85);
+  z-index:1;
+
+}
 .section-title {
   font-size: 4rem;
 }
