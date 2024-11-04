@@ -393,7 +393,6 @@ h1, h2, h3, h4, h5, h6,
 
 h1, .h1 {
   font-size: 3rem;
-
 }
 
 h2, .h2 {
@@ -11365,7 +11364,7 @@ pre {
 
 .section-title-background{
   font-size: 4rem;
-  background: rgba(33, 37, 41, 0.85);
+  background: rgba(24, 37, 41, 0.85);
   background: url(../imgs/main.jpg) no-repeat center center fixed;
   background-size: cover;
 
@@ -11373,12 +11372,13 @@ pre {
 }
 
 .grey-overlay{
-  background-color: rgba(33, 37, 41, 0.85);
+  background-color: rgba(33, 37, 41, 0.95);
   z-index:1;
 
 }
 .section-title {
   font-size: 4rem;
+
 }
 
 .has-height-xs {

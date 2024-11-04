@@ -32,11 +32,11 @@ $(document).ready(function(){
 });
 
 new WOW().init();
-
+ 
 function initMap() {
-    var uluru = {lat: 37.227837, lng: -95.700513};
+    var uluru = {lat: 43.4833534609328, lng: -3.8000910982811797};
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 8,
+      zoom: 12,
       center: uluru
     });
     var marker = new google.maps.Marker({
