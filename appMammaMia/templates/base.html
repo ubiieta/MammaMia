@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="es">
+    <head title="MammaMia">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Start your development with FoodHut landing page.">
+        <meta name="author" content="Devcrud">
+
+        <title>
+            {% block title %}Mamma mia! | Pizzas auténticas{% endblock %}
+        </title>
+
+        <!-- font icons -->
+        <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.css' %}">
+
+        <!-- Bootstrap + FoodHut main styles -->
+        <link rel="stylesheet" href="{% static 'assets/css/foodhut.css' %}">
+        
+        {% block extra_head %}
+        {% endblock %}
+    </head>
+
+    <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+        <!-- Navbar -->
+        <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix" data-offset-top="10">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Acerca de nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallary">Nuestra selección</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#book-table">Reservar mesa</a>
+                    </li>
+                </ul>
+                <a class="navbar-brand m-auto" href="#">
+                    <img src="{% static 'assets/imgs/logo.png' %}" class="brand-img" alt="Logo de Mamma Mia">
+                    <span class="brand-txt">Mamma mia!</span>
+                </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testmonial">Reseñas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contactanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="components.html" class="btn btn-primary ml-xl-4">Components</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        {% block content %}
+        {% endblock %}
+
+        <!-- Page Footer -->
+        <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>VISITANOS</h3>
+                    <p class="text-muted">Lunes ~ Jueves (12:30-22:00)</p>
+                    <p class="text-muted">Viernes ~ Sabado (12:30-00:00)</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>LLAMANOS</h3>
+                    <p class="text-muted">942 39 22 40</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>ENCUENTRANOS</h3>
+                    <p class="text-muted">C. Inés Diego de Noval, 39, 39012 Santander, Cantabria</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-dark text-light text-center border-top wow fadeIn">
+            <p class="mb-0 py-3 text-muted small">&copy; Copyright <script>document.write(new Date().getFullYear())</script> Made with <i class="ti-heart text-danger"></i> By <a href="http://devcrud.com">DevCRUD</a></p>
+        </div>
+        <!-- End of Page Footer -->
+
+        <!-- Core Scripts -->
+        <script src="{% static 'assets/vendors/jquery/jquery-3.4.1.js' %}"></script>
+        <script src="{% static 'assets/vendors/bootstrap/bootstrap.bundle.js' %}"></script>
+
+        <!-- Bootstrap Affix -->
+        <script src="{% static 'assets/vendors/bootstrap/bootstrap.affix.js' %}"></script>
+
+        <!-- Wow.js -->
+        <script src="{% static 'assets/vendors/wow/wow.js' %}"></script>
+
+        <!-- Google Maps -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
+
+        <!-- FoodHut JS -->
+        <script src="{% static 'assets/js/foodhut.js' %}"></script>
+
+        {% block extra_scripts %}
+        {% endblock %}
+
+    </body>
+</html>
