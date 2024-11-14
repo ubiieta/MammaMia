@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title%} Mamma Mia [{{ingrediente.nombre}}] {%endblock%}
-
+{%block extra_head%}
+<link rel="stylesheet" href="{% static 'assets/css/pizzas.css' %}">
+{%endblock%}
 
 {% block content %}
 <h2 style="text-align: center">Descripción de Ingrediente: {{ingrediente.nombre}}</h2><br>
@@ -27,8 +29,30 @@
        <dd class="col-sm-9">
           <p>{{ingrediente.precio_extra}}€</p>
        </dd>
-
     </dl>
  </td></div><br>
+
+<br><br>
+ <h4 style="margin-left:120px">Pizzas que lo contienen</h4><br>
+ <div class="container">
+    <div class="row">
+        {%for pizza in pizzas%}
+            <div class="col-sm-6 col-lg-4">
+                <div class="pizza-card">
+                    
+                    <div class="pizza-img">
+                        <img src="{{ pizza.imagen_url }}" alt="{{ pizza.nombre }}" class="img-fluid">
+                    </div>
+
+                    <div class="pizza-info">
+                        <h4>{{ pizza.nombre }}</h4>
+                        <a href="{% url 'pizzas' pizza.masa %}">Más información</a>  <!-- CAMBIAR ESTE ENLACE A SU DESC Y NO A SU MASA -->
+                    </div>
+                </div>
+            </div>
+        {%endfor%}  
+    </div>
+</div><br><br>
+ 
 
 {%endblock%}

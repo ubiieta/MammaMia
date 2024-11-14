@@ -33,4 +33,11 @@ class Pizza(models.Model):
     
     def __str__(self):
         return self.nombre
+    
+
+class Reserva(models.Model):
+    numero_comensales = models.PositiveIntegerField()
+    hora = models.TimeField()
+    fecha = models.DateField()
+    email = models.EmailField()
    
