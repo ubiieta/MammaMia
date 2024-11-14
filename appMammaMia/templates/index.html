@@ -49,13 +49,13 @@
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{% static 'assets/imgs/gallary-3.jpg' %}" alt="Foto de masa 3" class="gallary-img">
-            <a href="pizzas.html" class="gallary-overlay">
+            <a href="{% url 'pizzas' 'queso' %}" class="gallary-overlay">
                 <span class="h3 white">Masa con queso</span>
             </a>
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{% static 'assets/imgs/gluten.jpg' %}" alt="Foto de masa 4" class="gallary-img">
-            <a href="pizzas.html" class="gallary-overlay">
+            <a href="{% url 'pizzas' 'glutenfree' %}" class="gallary-overlay">
                 <span class="h3 white">Masa sin gluten</span>
             </a>
         </div>

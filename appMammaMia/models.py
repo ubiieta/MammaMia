@@ -26,6 +26,7 @@ class Pizza(models.Model):
     descripcion = models.TextField(blank=True, null=True)
     precio = models.IntegerField()
     tiempo_preparacion = models.IntegerField(default=15)
+    imagen_url = models.URLField(blank=True, null=True)
 
     masa = models.ForeignKey(Masa, on_delete=models.CASCADE)
     ingredientes = models.ManyToManyField(Ingrediente)

@@ -1,23 +1,44 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title%} Pizzas masa X {%endblock%}
+
+{%block extra_head%}
+<link rel="stylesheet" href="{% static 'assets/css/pizzas.css' %}">
+{%endblock%}
+
+{% block title%} Pizzas masa {{masa.nombre}} {%endblock%}
 
 {% block content %}
-<h1>Pizzas con masa: {{ masa.nombre }}</h1>
-    {% if pizzas %}
-        <ul>
+<h1 class="titulo-de-masa">Pizzas con masa: {{ masa.nombre }}</h1><br>
+<div class="container">
+    <div class="row">
+        {% if pizzas %}
             {% for pizza in pizzas %}
-                <li>{{ pizza.nombre }} - Precio: {{ pizza.precio }}</li>
-                <p>Ingredientes:</p>
-                <ul>
-                    {% for ingrediente in pizza.ingredientes.all %}
-                        <li>{{ ingrediente.nombre }}</li>
-                    {% endfor %}
-                </ul>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No hay pizzas disponibles con esta masa.</p>
-    {% endif %}
+                <div class="col-sm-6 col-lg-4">
+                    <div class="pizza-card">
+                        
+                        <div class="pizza-img">
+                            <img src="{{ pizza.imagen_url }}" alt="{{ pizza.nombre }}" class="img-fluid">
+                        </div>
+                        
 
+                        <div class="pizza-info">
+                            <h4>{{ pizza.nombre }}</h4>
+                            <p>{{ pizza.descripcion }}</p>
+                            <p><strong>Precio:</strong> €{{ pizza.precio }}</p>
+                            <p><strong>Tiempo de preparación:</strong> {{ pizza.tiempo_preparacion }} min</p>
+                            <p><strong>Ingredientes:</strong></p>
+                            <ul>
+                                {% for ingrediente in pizza.ingredientes.all %}
+                                    <li>{{ ingrediente.nombre }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No hay pizzas disponibles con esta masa.</p>
+        {% endif %}
+    </div>
+</div>
 {%endblock%}
