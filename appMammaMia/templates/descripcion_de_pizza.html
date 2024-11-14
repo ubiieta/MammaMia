@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%} Mamma Mia [{{ingrediente.nombre}}] {%endblock%}
+{%block extra_head%}
+<link rel="stylesheet" href="{% static 'assets/css/pizzas.css' %}">
+{%endblock%}
+
+{% block content %}
+<div class="container">
+    <div class="pizza-card" style="width: 65%; margin:auto;">
+        
+        <div class="pizza-img">
+            <img src="{{ pizza.imagen_url }}" alt="{{ pizza.nombre }}" class="img-fluid">
+        </div>
+    
+        <div class="pizza-info">
+            <h4>{{ pizza.nombre }}</h4>
+            <p>{{ pizza.descripcion }}</p>
+            <p><strong>Precio:</strong> €{{ pizza.precio }}</p>
+            <p><strong>Tiempo de preparación:</strong> {{ pizza.tiempo_preparacion }} min</p>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+                {% for ingrediente in pizza.ingredientes.all %}
+                    <li><a href="{% url 'ingrediente_desc' ingrediente.nombre %}">{{ ingrediente.nombre }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>    
+    </div>
+</div>
+{%endblock%}

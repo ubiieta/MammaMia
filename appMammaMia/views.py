@@ -15,6 +15,10 @@ def pizzas(request, masa_tipo):
     pizzas = Pizza.objects.filter(masa=masa)
     return render(request,"pizzas.html", {'pizzas': pizzas, 'masa': masa})
 
+def pizza_desc(request, p_nombre):
+    pizza = get_object_or_404(Pizza, nombre__iexact=p_nombre)
+    return render(request, "descripcion_de_pizza.html", {'pizza':pizza})
+
 def ingrediente_desc(request, i_nombre):
     ingrediente = get_object_or_404(Ingrediente, nombre__iexact=i_nombre)
     pizzas = Pizza.objects.filter(ingredientes__nombre__iexact=i_nombre)
