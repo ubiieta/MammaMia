@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%} Pizzas masa X {%endblock%}
+
+{% block content %}
+<br><br><br>
+<h1>Tipos de Masas</h1>
+    <ul>
+        {% for masa in masas %}
+            <li>{{ masa.nombre }}</li>
+        {% endfor %}
+    </ul>
+
+{%endblock%}
