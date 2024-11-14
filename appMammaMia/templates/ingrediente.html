@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%} Mamma Mia [{{ingrediente.nombre}}] {%endblock%}
+
+
+{% block content %}
+<h2 style="text-align: center">Descripción de Ingrediente: {{ingrediente.nombre}}</h2><br>
+<div class="fondo-carta" style="background-color: #1f252bb9; padding: 30px; margin:auto; width: 80%; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); ">
+<td>
+    <dl class="row">      
+       <dt class="col-sm-3">Nombre</dt>
+       <dd class="col-sm-9">
+          <p>{{ingrediente.nombre}}</p>
+       </dd>
+
+       <dt class="col-sm-3">Descripción</dt>
+       <dd class="col-sm-9">
+          <p>{{ingrediente.descripcion}}</p>
+       </dd>
+
+       <dt class="col-sm-3">Es vegano</dt>
+       <dd class="col-sm-9">
+                {% if ingrediente.es_vegetariano %}Sí{% else %}No{% endif %}
+       </dd>
+
+       <dt class="col-sm-3">Precio extra</dt>
+       <dd class="col-sm-9">
+          <p>{{ingrediente.precio_extra}}€</p>
+       </dd>
+
+    </dl>
+ </td></div><br>
+
+{%endblock%}

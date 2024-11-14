@@ -6,4 +6,5 @@ urlpatterns = [
  path('index.html', views.index, name='index'),
  path('components.html', views.components, name='Components'),
  path('pizzas/<str:masa_tipo>/', views.pizzas, name='pizzas' ),
+ path('ingrediente/<str:i_nombre>/', views.ingrediente_desc, name='ingrediente_desc'),
 ]
