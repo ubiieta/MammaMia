@@ -1,6 +1,6 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.http import HttpResponse
-from .models import Masa, Pizza, Ingrediente
+from .models import Masa, Pizza, Ingrediente, Reserva
 
 def index(request):
     masas = Masa.objects.all()
@@ -23,3 +23,27 @@ def ingrediente_desc(request, i_nombre):
     ingrediente = get_object_or_404(Ingrediente, nombre__iexact=i_nombre)
     pizzas = Pizza.objects.filter(ingredientes__nombre__iexact=i_nombre)
     return render(request, "ingrediente.html", {'ingrediente': ingrediente, 'pizzas':pizzas})
+
+
+
+
+def reservar_mesa(request):
+    if request.method == 'POST':
+        npersonas = request.POST.get('booktable-guests')
+        hora = request.POST.get('booktable-time')
+        fecha = request.POST.get('booktable-date')
+        email = request.POST.get('booktable-email')
+
+        if npersonas and hora and fecha and email:
+            reserva = Reserva(
+                npersonas = int(npersonas),
+                hora = hora,
+                fecha = fecha,
+                email = email
+            )
+            reserva.save()
+            return redirect('reserva_success')  # Redirige a la página de éxito
+    return redirect('index')
+
+def reserva_success(request):
+    return render(request, "reserva_success.html")

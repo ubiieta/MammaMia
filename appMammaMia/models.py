@@ -36,7 +36,7 @@ class Pizza(models.Model):
     
 
 class Reserva(models.Model):
-    numero_comensales = models.PositiveIntegerField()
+    npersonas = models.PositiveIntegerField()
     hora = models.TimeField()
     fecha = models.DateField()
     email = models.EmailField()
