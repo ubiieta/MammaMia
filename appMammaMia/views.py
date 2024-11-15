@@ -42,8 +42,9 @@ def reservar_mesa(request):
                 email = email
             )
             reserva.save()
-            return redirect('reserva_success')  # Redirige a la página de éxito
+            return redirect('reserva_success', reserva_id=reserva.id)  # Redirige a la página de éxito
     return redirect('index')
 
-def reserva_success(request):
-    return render(request, "reserva_success.html")
+def reserva_success(request, reserva_id):
+    reserva = get_object_or_404(Reserva, id=reserva_id)
+    return render(request, "reserva_success.html", {'reserva': reserva})
