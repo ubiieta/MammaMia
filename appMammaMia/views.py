@@ -7,6 +7,7 @@ def index(request):
     ingredientes = Ingrediente.objects.all()
     return render(request,"index.html", {'masas': masas, 'ingredientes':ingredientes})
 
+#ESTE HAY QUE BORRARLO - COMPONENTS SON LAS PLANTILLAS A SECAS
 def components(request):
     return render(request,"components.html")
 
@@ -42,9 +43,9 @@ def reservar_mesa(request):
                 email = email
             )
             reserva.save()
-            return redirect('reserva_success', reserva_id=reserva.id)  # Redirige a la página de éxito
-    return redirect('index')
+            return redirect('reserva_success', reserva_id=reserva.id)  #página de éxito
+    return redirect('index')#de vuelta al loby literal
 
 def reserva_success(request, reserva_id):
-    reserva = get_object_or_404(Reserva, id=reserva_id)
+    reserva = get_object_or_404(Reserva, id=reserva_id) 
     return render(request, "reserva_success.html", {'reserva': reserva})
