@@ -7,6 +7,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Web de pizzeria MammaMia!">
         <meta name="author" content="Aitor Ubieta, Eneko Alvarez, Oihane Carrillo y Maialen Blanco">
+        <style>
+            .navbar-link {
+                color: white;
+                font-weight: bold;
+                font-size: 16px;
+                padding-left: 20px;
+            }
+        </style>
 
         <title>
             {% block title %}Mamma mia! | Pizzas auténticas{% endblock %}
@@ -35,13 +43,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/#home">Home</a>
+                        <a class="navbar-link" href="/#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html#gallary">Nuestra selección</a>
+                        <a class="navbar-link" href="/index.html#gallary">Nuestra selección</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html#book-table">Reservar mesa</a>
+                        <a class="navbar-link" href="/index.html#book-table">Reservar mesa</a>
                     </li>
                 </ul>
                 <a class="navbar-brand m-auto" href="/index.html">
@@ -49,7 +57,7 @@
                     <span class="brand-txt">Mamma mia!</span>
                 </a>
                 <ul class="navbar-nav">
-                   {% comment %} nav vacio para centrar el logo {% endcomment %}
+                   <!-- nav vacio para centrar el logo -->
                 </ul>
             </div>
         </nav>
@@ -72,7 +80,7 @@
                 </div>
                 <div class="col-sm-4">
                     <h3>ESCRIBENOS</h3>
-                    <p class="text-muted">mammamia@pizza.es</p>
+                    <p class="text-muted"><a href="mailto:help@mimadre.shop">help@mimadre.shop</a></p>
                 </div>
             </div>
         </div>
