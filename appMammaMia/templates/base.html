@@ -5,8 +5,8 @@
     <head title="MammaMia">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Start your development with FoodHut landing page.">
-        <meta name="author" content="Devcrud">
+        <meta name="description" content="Web de pizzeria MammaMia!">
+        <meta name="author" content="Aitor Ubieta, Eneko Alvarez, Oihane Carrillo y Maialen Blanco">
 
         <title>
             {% block title %}Mamma mia! | Pizzas auténticas{% endblock %}
@@ -15,7 +15,7 @@
         <!-- font icons -->
         <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
         <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.css' %}">
-        <link rel="icon" href="{% static '\assets\imgs\logo.png' %}" type="image/x-icon">
+        <link rel="icon" href="{% static '\assets\imgs\logo-black.png' %}" type="image/x-icon">
 
 
         <!-- Bootstrap + FoodHut main styles -->
@@ -38,13 +38,10 @@
                         <a class="nav-link" href="/#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#gallary">Nuestra selección</a>
+                        <a class="nav-link" href="/index.html#gallary">Nuestra selección</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#ingredients">Nuestros Ingredientes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#book-table">Reservar mesa</a>
+                        <a class="nav-link" href="/index.html#book-table">Reservar mesa</a>
                     </li>
                 </ul>
                 <a class="navbar-brand m-auto" href="/index.html">
@@ -52,29 +49,17 @@
                     <span class="brand-txt">Mamma mia!</span>
                 </a>
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#blog">Blog<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testmonial">Reseñas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contactanos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/admin" class="btn btn-primary ml-xl-4">Admin Panel</a> <!--QUITAR SEGURAMENTE-->
-                    </li>
+                   {% comment %} nav vacio para centrar el logo {% endcomment %}
                 </ul>
             </div>
         </nav>
 
         <!-- Main content -->
-        <br><br><br><br><br><br><br><br><br>
         {% block content %}
         {% endblock %}
 
         <!-- Page Footer -->
-        <br><div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
+        <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
             <div class="row">
                 <div class="col-sm-4">
                     <h3>VISITANOS</h3>
@@ -86,14 +71,12 @@
                     <p class="text-muted">942 39 22 40</p>
                 </div>
                 <div class="col-sm-4">
-                    <h3>ENCUENTRANOS</h3>
-                    <p class="text-muted">C. Inés Diego de Noval, 39, 39012 Santander, Cantabria</p>
+                    <h3>ESCRIBENOS</h3>
+                    <p class="text-muted">mammamia@pizza.es</p>
                 </div>
             </div>
         </div>
-        <div class="bg-dark text-light text-center border-top wow fadeIn">
-            <p class="mb-0 py-3 text-muted small">&copy; Copyright <script>document.write(new Date().getFullYear())</script> Made with <i class="ti-heart text-danger"></i> By <a href="http://devcrud.com">DevCRUD</a></p>
-        </div>
+      
         <!-- End of Page Footer -->
 
         <!-- Core Scripts -->
