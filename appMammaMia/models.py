@@ -7,6 +7,7 @@ class Masa(models.Model):
     nombre = models.CharField(max_length=50, unique=True)
     descripcion = models.TextField(blank=True, null=True)
     precio_extra = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    imagen_url = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.nombre
