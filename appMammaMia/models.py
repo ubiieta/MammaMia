@@ -18,6 +18,7 @@ class Ingrediente(models.Model):
     descripcion = models.TextField(blank=True, null=True)
     es_vegetariano = models.BooleanField(default=True)
     precio_extra = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    imagen_url = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.nombre

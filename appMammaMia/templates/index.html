@@ -29,93 +29,49 @@
             </div>
         </div>
     </div>
+    <!--Seccion de nuestra seleccion: Mostrar una pizza de cada masa -->
+    <div id="nuestraseleccion" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
+        <h2 class="section-title">NUESTRA SELECCION</h2>
+    </div>
+    <div class="gallary row">
+        {% for masa, pizza in pizzas_por_masa.items %}
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="{{ pizza.imagen_url }}" alt="Foto de {{ masa.nombre }}" class="gallary-img">
+            <a href="{% url 'pizza_desc' pizza.nombre %}" class="gallary-overlay">
+                <p class="h5 white">Masa {{ masa.nombre }}: {{ pizza.nombre }} - {{ pizza.precio }} €</p>
+            </a>
+        </div>
+    {% endfor %}
+    </div>
 
     <!-- Pizza Base Section -->
-    <div id="gallary" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
+    <div id="masas" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
         <h2 class="section-title">NUESTRAS MASAS</h2>
     </div>
     <div class="gallary row">
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="{% static 'assets/imgs/gallary-1.jpg' %}" alt="Foto de masa 1" class="gallary-img">
-            <a href="{% url 'pizzas' 'fina' %}" class="gallary-overlay">
-                <span class="h3 white">Masa fina</span>
-            </a>
-        </div>
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="{% static 'assets/imgs/gallary-2.jpg' %}" alt="Foto de masa 2" class="gallary-img">
-            <a href="{% url 'pizzas' 'original' %}" class="gallary-overlay">
-                <span class="h3 white">Masa original</span>
-            </a>
-        </div>
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="{% static 'assets/imgs/gallary-3.jpg' %}" alt="Foto de masa 3" class="gallary-img">
-            <a href="{% url 'pizzas' 'queso' %}" class="gallary-overlay">
-                <span class="h3 white">Masa con queso</span>
-            </a>
-        </div>
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="{% static 'assets/imgs/gluten.jpg' %}" alt="Foto de masa 4" class="gallary-img">
-            <a href="{% url 'pizzas' 'glutenfree' %}" class="gallary-overlay">
-                <span class="h3 white">Masa sin gluten</span>
-            </a>
-        </div>
+        {%for masa in masas%}
+            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+                <img src="{{ masa.imagen_url }}" alt="Foto de {{masa.nombre}}" class="gallary-img">
+                <a href="{% url 'pizzas' masa.nombre|slugify %}" class="gallary-overlay">
+                    <span class="h3 white">Masa {{masa.nombre}}</span>
+                </a>
+            </div>
+        {%endfor%}
     </div>
 
     <!-- Ingredients Section -->
-    <div id="ingredients" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
+    <div id="ingredientes" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
         <h2 class="section-title">NUESTROS INGREDIENTES</h2>
     </div>
     <div class="gallary row">
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="{% static 'assets/imgs/pepperoni.jpg' %}" alt="Ingrediente 1" class="gallary-img">
-            <a href="{% url 'ingrediente_desc' 'Pepperoni' %}" class="gallary-overlay">
-                <span class="h3 white">Pepperoni</span>
-            </a>
-        </div>
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="{% static 'assets/imgs/guanciale.jpg' %}" alt="Ingrediente 2" class="gallary-img">
-            <a href="{% url 'ingrediente_desc' 'Guanciale' %}" class="gallary-overlay">
-                <span class="h3 white">Guanciale</span>
-            </a>
-        </div>
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="{% static 'assets/imgs/pesto.jpg' %}" alt="Ingrediente 3" class="gallary-img">
-            <a href="{% url 'ingrediente_desc' 'Pesto' %}" class="gallary-overlay">
-                <span class="h3 white">Pesto</span>
-            </a>
-        </div>
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="{% static 'assets/imgs/trufas.jpg' %}" alt="Ingrediente 4" class="gallary-img">
-            <a href="{% url 'ingrediente_desc' 'Trufas' %}" class="gallary-overlay">
-                <span class="h3 white">Trufas</span>
-            </a>
-        </div>
-        <div class="gallary row">
+        {%for ingrediente in ingredientes%}
             <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-                <img src="{% static 'assets/imgs/parmigiano.jpg' %}" alt="Ingrediente 1" class="gallary-img">
-                <a href="{% url 'ingrediente_desc' 'Parmigiano Reggiano' %}" class="gallary-overlay">
-                    <span class="h3 white">Parmigiano Reggiano</span>
+                <img src="{{ ingrediente.imagen_url }}" alt="{{ingrediente.nombre}}" class="gallary-img">
+                <a href="{% url 'ingrediente_desc' ingrediente.nombre %}" class="gallary-overlay">
+                    <span class="h3 white">{{ingrediente.nombre}}</span>
                 </a>
             </div>
-            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-                <img src="{% static 'assets/imgs/mozzarella.jpg' %}" alt="Ingrediente 2" class="gallary-img">
-                <a href="{% url 'ingrediente_desc' 'Mozzarella' %}" class="gallary-overlay">
-                    <span class="h3 white">Mozzarella</span>
-                </a>
-            </div>
-            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-                <img src="{% static 'assets/imgs/setas.jpg' %}" alt="Ingrediente 3" class="gallary-img">
-                <a href="{% url 'ingrediente_desc' 'Setas' %}" class="gallary-overlay">
-                    <span class="h3 white">Setas</span>
-                </a>
-            </div>
-            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-                <img src="{% static 'assets/imgs/aceitunas.jpg' %}" alt="Ingrediente 4" class="gallary-img">
-                <a href="{% url 'ingrediente_desc' 'Aceitunas' %}" class="gallary-overlay">
-                    <span class="h3 white">Aceitunas</span>
-                </a>
-            </div>
-        </div>
+       {%endfor%}
     </div>
 
     <!-- Book a Table Section -->

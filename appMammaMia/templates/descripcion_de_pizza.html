@@ -18,7 +18,7 @@
         <div class="pizza-info">
             <h4>{{ pizza.nombre }}</h4>
             <p>{{ pizza.descripcion }}</p>
-            <p><strong>Tipo de masa:</strong> {{ pizza.masa }}</p>
+            <p><strong>Tipo de masa: </strong><a href="{% url 'pizzas' pizza.masa.nombre %}">{{ pizza.masa.nombre }}</a></p> 
             <p><strong>Precio:</strong> €{{ pizza.precio }}</p>
             <p><strong>Tiempo de preparación:</strong> {{ pizza.tiempo_preparacion }} min</p>
             <p><strong>Ingredientes:</strong></p>

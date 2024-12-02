@@ -5,7 +5,14 @@ from .models import Masa, Pizza, Ingrediente, Reserva
 def index(request):
     masas = Masa.objects.all()
     ingredientes = Ingrediente.objects.all()
-    return render(request,"index.html", {'masas': masas, 'ingredientes':ingredientes})
+    pizzas_por_masa = {}
+
+    for masa in masas:
+        pizza_barata = masa.pizza_set.order_by('precio').first()
+        if pizza_barata:
+            pizzas_por_masa[masa] = pizza_barata
+
+    return render(request,"index.html", {'masas': masas, 'ingredientes':ingredientes, 'pizzas_por_masa':pizzas_por_masa})
 
 #ESTE HAY QUE BORRARLO - COMPONENTS SON LAS PLANTILLAS A SECAS
 def components(request):
@@ -13,7 +20,7 @@ def components(request):
 
 def pizzas(request, masa_tipo):
     masa = get_object_or_404(Masa, nombre__iexact=masa_tipo)
-    pizzas = Pizza.objects.filter(masa=masa)
+    pizzas = masa.pizza_set.all()
     return render(request,"pizzas.html", {'pizzas': pizzas, 'masa': masa})
 
 def pizza_desc(request, p_nombre):
