@@ -18,7 +18,6 @@
         <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.css' %}">
         <link rel="icon" href="{% static '\assets\imgs\logo-black.png' %}" type="image/x-icon">
 
-
         <!-- Bootstrap + FoodHut main styles -->
         <link rel="stylesheet" href="{% static 'assets/css/foodhut.css' %}">
         
@@ -59,15 +58,10 @@
                     </li>
                 </ul>
                 
-                <!-- Selector de idioma -->
+                <!-- Selector de idioma como botones -->
                 <div class="language-selector ml-auto">
-                    <form method="post" action="{% url 'set_language' %}">
-                        {% csrf_token %}
-                        <select name="language" onchange="this.form.submit()" class="navbar-link">
-                            <option value="es" {% if LANGUAGE_CODE == 'es' %}selected{% endif %}>Español</option>
-                            <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
-                        </select>
-                    </form>
+                    <a href="?lang=es" class="navbar-link" style="padding: 10px;">ES</a>
+                    <a href="?lang=en" class="navbar-link" style="padding: 10px;">EN</a>
                 </div>
             </div>
         </nav>
@@ -118,4 +112,5 @@
 
     </body>
 </html>
+
 

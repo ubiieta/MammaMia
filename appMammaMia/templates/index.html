@@ -6,151 +6,151 @@
 {% endblock %}
 
 {% block content %}
- <!-- Header -->
- <header id="home" class="header">
-    <div class="overlay text-white text-center">
-        <h1 class="display-2 font-weight-bold my-3">Mamma mia!</h1>
-        <h2 class="display-4 mb-5">{% trans "Pizzas auténticas" %}</h2>
-        <a class="btn btn-lg btn-primary" href="#gallary">{% trans "Nuestro menú" %}</a>
-    </div>
-</header>
+    <!-- Header -->
+    <header id="home" class="header">
+        <div class="overlay text-white text-center">
+            <h1 class="display-2 font-weight-bold my-3">Mamma mia!</h1>
+            <h2 class="display-4 mb-5">{% trans Pizzas auténticas %}</h2>
+            <a class="btn btn-lg btn-primary" href="#gallary">Nuestro menú</a>
+        </div>
+    </header>
 
-<!-- About Section -->
-<div id="about" class="container-fluid wow fadeIn" data-wow-duration="1.5s">
-    <div class="row">
-        <div class="col-lg-6 has-img-bg"></div>
-        <div class="col-lg-6">
-            <div class="row justify-content-center">
-                <div class="col-sm-8 py-5 my-5">
-                    <h2 class="mb-4">Acerca de nosotros</h2>
-                    <p>{% trans "Bienvenidos a Mamma Mia, donde la tradición italiana se encuentra con la innovación culinaria. Nuestra pizzería se enorgullece de utilizar solo los ingredientes más auténticos, desde la harina de trigo italiano hasta el queso mozzarella fresco, todos seleccionados con esmero. Pero no nos detenemos ahí: nuestras recetas reinventan clásicos atemporales, fusionando sabores tradicionales con toques modernos." %}</p>
-                    <p>{% trans "Desde nuestra masa artesanal, fermentada lentamente para lograr una textura perfecta, hasta combinaciones únicas de ingredientes frescos y salsas caseras, cada pizza cuenta una historia. En Mamma Mia, cada bocado es un viaje a Italia, pero con un giro contemporáneo que deleitará tu paladar. Ven a disfrutar de una experiencia gastronómica que celebra lo mejor de la cocina italiana, con un enfoque creativo y apasionado. ¡Te esperamos!" %}</p>
+    <!-- About Section -->
+    <div id="about" class="container-fluid wow fadeIn" data-wow-duration="1.5s">
+        <div class="row">
+            <div class="col-lg-6 has-img-bg"></div>
+            <div class="col-lg-6">
+                <div class="row justify-content-center">
+                    <div class="col-sm-8 py-5 my-5">
+                        <h2 class="mb-4">Acerca de nosotros</h2>
+                        <p>Bienvenidos a Mamma Mia, donde la tradición italiana se encuentra con la innovación culinaria. Nuestra pizzería se enorgullece de utilizar solo los ingredientes más auténticos, desde la harina de trigo italiano hasta el queso mozzarella fresco, todos seleccionados con esmero. Pero no nos detenemos ahí: nuestras recetas reinventan clásicos atemporales, fusionando sabores tradicionales con toques modernos.</p>
+                        <p>Desde nuestra masa artesanal, fermentada lentamente para lograr una textura perfecta, hasta combinaciones únicas de ingredientes frescos y salsas caseras, cada pizza cuenta una historia. En Mamma Mia, cada bocado es un viaje a Italia, pero con un giro contemporáneo que deleitará tu paladar. Ven a disfrutar de una experiencia gastronómica que celebra lo mejor de la cocina italiana, con un enfoque creativo y apasionado. ¡Te esperamos!</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!--Seccion de nuestra seleccion: Mostrar una pizza de cada masa -->
-<div id="nuestraseleccion" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
-    <h2 class="section-title">{% trans "NUESTRA SELECCION" %}</h2>
-</div>
-<div class="gallary row">
-    {% for masa, pizza in pizzas_por_masa.items %}
-    <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img src="{{ pizza.imagen_url }}" alt="Foto de {{ masa.nombre }}" class="gallary-img">
-        <a href="{% url 'pizza_desc' pizza.nombre %}" class="gallary-overlay">
-            <p class="h5 white">Masa {{ masa.nombre }}: {{ pizza.nombre }} - {{ pizza.precio }} €</p>
-        </a>
+    <!--Seccion de nuestra seleccion: Mostrar una pizza de cada masa -->
+    <div id="nuestraseleccion" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
+        <h2 class="section-title">NUESTRA SELECCION</h2>
     </div>
-{% endfor %}
-</div>
-
-<!-- Pizza Base Section -->
-<div id="masas" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
-    <h2 class="section-title">{% trans "NUESTRAS MASAS" %}</h2>
-</div>
-<div class="gallary row">
-    {%for masa in masas%}
+    <div class="gallary row">
+        {% for masa, pizza in pizzas_por_masa.items %}
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="{{ masa.imagen_url }}" alt="Foto de {{masa.nombre}}" class="gallary-img">
-            <a href="{% url 'pizzas' masa.nombre|slugify %}" class="gallary-overlay">
-                <span class="h3 white">Masa {{masa.nombre}}</span>
+            <img src="{{ pizza.imagen_url }}" alt="Foto de {{ masa.nombre }}" class="gallary-img">
+            <a href="{% url 'pizza_desc' pizza.nombre %}" class="gallary-overlay">
+                <p class="h5 white">Masa {{ masa.nombre }}: {{ pizza.nombre }} - {{ pizza.precio }} €</p>
             </a>
         </div>
-    {%endfor%}
-</div>
+    {% endfor %}
+    </div>
 
-<!-- Ingredients Section -->
-<div id="ingredientes" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
-    <h2 class="section-title">{% trans "NUESTROS INGREDIENTES" %}</h2>
-</div>
-<div class="gallary row">
-    {%for ingrediente in ingredientes%}
-        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="{{ ingrediente.imagen_url }}" alt="{{ingrediente.nombre}}" class="gallary-img">
-            <a href="{% url 'ingrediente_desc' ingrediente.nombre %}" class="gallary-overlay">
-                <span class="h3 white">{{ingrediente.nombre}}</span>
-            </a>
-        </div>
-   {%endfor%}
-</div>
-
-<!-- Book a Table Section -->
-<div class="container-fluid has-bg-overlay text-center text-light has-height-lg middle-items" id="book-table">
-    <div class="">
-        <br><br><br><br><br><br><br>
-        <h2 class="section-title mb-5">{% trans "RESERVAR MESA" %}</h2>
-        <form method="post" action="{% url 'reservar_mesa' %}">
-            {% csrf_token %}
-            <div class="row mb-5">
-                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-                    <input type="number" name="booktable-guests" class="form-control form-control-lg custom-form-control" placeholder="NUMERO DE COMENSALES" max="20" min="1">
-                </div>
-                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-                    <input type="time" name="booktable-time" class="form-control form-control-lg custom-form-control">
-                </div>
-                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-                    <input type="date" name="booktable-date" class="form-control form-control-lg custom-form-control">
-                </div>
-                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-                    <input type="email" name="booktable-email" class="form-control form-control-lg custom-form-control" placeholder="EMAIL">
-                </div>
+    <!-- Pizza Base Section -->
+    <div id="masas" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
+        <h2 class="section-title">NUESTRAS MASAS</h2>
+    </div>
+    <div class="gallary row">
+        {%for masa in masas%}
+            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+                <img src="{{ masa.imagen_url }}" alt="Foto de {{masa.nombre}}" class="gallary-img">
+                <a href="{% url 'pizzas' masa.nombre|slugify %}" class="gallary-overlay">
+                    <span class="h3 white">Masa {{masa.nombre}}</span>
+                </a>
             </div>
-            <button type="submit" class="btn btn-lg btn-primary" id="rounded-btn">{% trans "BUSCAR MESA" %}</button>
+        {%endfor%}
+    </div>
+
+    <!-- Ingredients Section -->
+    <div id="ingredientes" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
+        <h2 class="section-title">NUESTROS INGREDIENTES</h2>
+    </div>
+    <div class="gallary row">
+        {%for ingrediente in ingredientes%}
+            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+                <img src="{{ ingrediente.imagen_url }}" alt="{{ingrediente.nombre}}" class="gallary-img">
+                <a href="{% url 'ingrediente_desc' ingrediente.nombre %}" class="gallary-overlay">
+                    <span class="h3 white">{{ingrediente.nombre}}</span>
+                </a>
+            </div>
+       {%endfor%}
+    </div>
+
+    <!-- Book a Table Section -->
+    <div class="container-fluid has-bg-overlay text-center text-light has-height-lg middle-items" id="book-table">
+        <div class="">
             <br><br><br><br><br><br><br>
+            <h2 class="section-title mb-5">RESERVA MESA</h2>
+            <form method="post" action="{% url 'reservar_mesa' %}">
+                {% csrf_token %}
+                <div class="row mb-5">
+                    <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                        <input type="number" name="booktable-guests" class="form-control form-control-lg custom-form-control" placeholder="NUMERO DE COMENSALES" max="20" min="1">
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                        <input type="time" name="booktable-time" class="form-control form-control-lg custom-form-control">
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                        <input type="date" name="booktable-date" class="form-control form-control-lg custom-form-control">
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                        <input type="email" name="booktable-email" class="form-control form-control-lg custom-form-control" placeholder="EMAIL">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary" id="rounded-btn">BUSCAR MESA</button>
+                <br><br><br><br><br><br><br>
 
-        </form>
+            </form>
+        </div>
+            
     </div>
-        
-</div>
 
-<!-- Reviews Section FALTA LINKEARLO CON LA BD TAMBIEN -->
-<div id="testmonial" class="container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
-    <h2 class="section-title my-5 text-center">{% trans "RESEÑAS" %}</h2>
-    <div class="row mt-3 mb-5">
-        <div class="col-md-4 my-3 my-md-0">
-            <div class="testmonial-card">
-                <h3 class="testmonial-title">Pinno Prestanizzi</h3>
-                <h6 class="testmonial-subtitle">Pizzero</h6>
-                <div class="testmonial-body">
-                    <p>Le doy un treh sobre treh.</p>
+    <!-- Reviews Section FALTA LINKEARLO CON LA BD TAMBIEN -->
+    <div id="testmonial" class="container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
+        <h2 class="section-title my-5 text-center">RESEÑAS</h2>
+        <div class="row mt-3 mb-5">
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="testmonial-card">
+                    <h3 class="testmonial-title">Pinno Prestanizzi</h3>
+                    <h6 class="testmonial-subtitle">Pizzero</h6>
+                    <div class="testmonial-body">
+                        <p>Le doy un treh sobre treh.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="testmonial-card">
+                    <h3 class="testmonial-title">Gordon Ramsay</h3>
+                    <h6 class="testmonial-subtitle">Michelin star chef</h6>
+                    <div class="testmonial-body">
+                        <p>La masa estaba cruda, ¡Malditamente cruda!. Pero en relidad me ha gustado bastante. 9/10 </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="testmonial-card">
+                    <h3 class="testmonial-title">Constanza Vanucci</h3>
+                    <h6 class="testmonial-subtitle">Abuela Italiana</h6>
+                    <div class="testmonial-body">
+                        <p>¡Pizza riquisima como en mi querida Italia!</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 my-3 my-md-0">
-            <div class="testmonial-card">
-                <h3 class="testmonial-title">Gordon Ramsay</h3>
-                <h6 class="testmonial-subtitle">Michelin star chef</h6>
-                <div class="testmonial-body">
-                    <p>La masa estaba cruda, ¡Malditamente cruda!. Pero en relidad me ha gustado bastante. 9/10 </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 my-3 my-md-0">
-            <div class="testmonial-card">
-                <h3 class="testmonial-title">Constanza Vanucci</h3>
-                <h6 class="testmonial-subtitle">Abuela Italiana</h6>
-                <div class="testmonial-body">
-                    <p>¡Pizza riquisima como en mi querida Italia!</p>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
 
-<!-- Contact Section -->
-<div id="contact" class="container-fluid bg-dark text-light border-top wow fadeIn">
-    <div class="row">
-        <div class="col-md-6 px-0">
-            <div id="map" style="width: 100%; height: 100%; min-height: 400px"></div>
-        </div>
-        <div class="col-md-6 px-5 has-height-lg middle-items">
-            <h3>{% trans "ENCUENTRANOS" %}</h3>
-            <p>{% trans "¡Descubre nuestra pizzería en el corazón de San Sebastián! Ubicados en una zona privilegiada, te ofrecemos un ambiente acogedor y familiar, ideal para disfrutar de deliciosas pizzas. Ven a visitarnos y déjate sorprender por nuestros sabores únicos, perfectos para compartir con amigos y familiares. ¡Te esperamos para que vivas una experiencia culinaria inolvidable!" %}</p>
-            <div class="text-muted">
-                <p><span class="ti-location-pin pr-3"></span> C. Inés Diego de Noval, 39, 39012 Santander, Cantabria</p>
+    <!-- Contact Section -->
+    <div id="contact" class="container-fluid bg-dark text-light border-top wow fadeIn">
+        <div class="row">
+            <div class="col-md-6 px-0">
+                <div id="map" style="width: 100%; height: 100%; min-height: 400px"></div>
+            </div>
+            <div class="col-md-6 px-5 has-height-lg middle-items">
+                <h3>ENCUENTRANOS</h3>
+                <p>¡Descubre nuestra pizzería en el corazón de San Sebastián! Ubicados en una zona privilegiada, te ofrecemos un ambiente acogedor y familiar, ideal para disfrutar de deliciosas pizzas. Ven a visitarnos y déjate sorprender por nuestros sabores únicos, perfectos para compartir con amigos y familiares. ¡Te esperamos para que vivas una experiencia culinaria inolvidable!</p>
+                <div class="text-muted">
+                    <p><span class="ti-location-pin pr-3"></span> C. Inés Diego de Noval, 39, 39012 Santander, Cantabria</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
