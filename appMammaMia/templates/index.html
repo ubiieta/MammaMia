@@ -7,55 +7,73 @@
 
 {% block content %}
  <!-- Header -->
- <header id="home" class="header">
-    <div class="overlay text-white text-center">
-        <h1 class="display-2 font-weight-bold my-3">Mamma mia!</h1>
-        <h2 class="display-4 mb-5">{% trans "Pizzas auténticas" %}</h2>
-
-        <!-- Selector de idioma -->
-        <div class="language-selector">
-            <form method="post" action="{% url 'set_language' %}">
-                {% csrf_token %}
-                <select name="language" onchange="this.form.submit()">
-                    <option value="es" {% if LANGUAGE_CODE == 'es' %}selected{% endif %}>Español</option>
-                    <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
-                </select>
-            </form>
+    <header id="home" class="header">
+        <div class="overlay text-white text-center">
+            <h1 class="display-2 font-weight-bold my-3">Mamma mia!</h1>
+            <h2 class="display-4 mb-5">{% trans "Pizzas auténticas" %}</h2>
+            <a class="btn btn-lg btn-primary" href="#gallary">{% "trans Nuestro menú" %}</a>
         </div>
+    </header>
 
-        <a class="btn btn-lg btn-primary" href="#gallary">{% trans "Nuestro menú" %}</a>
-    </div>
-</header>
-
-<!-- About Section -->
-<div id="about" class="container-fluid wow fadeIn" data-wow-duration="1.5s">
-    <div class="row">
-        <div class="col-lg-6 has-img-bg"></div>
-        <div class="col-lg-6">
-            <div class="row justify-content-center">
-                <div class="col-sm-8 py-5 my-5">
-                    <h2 class="mb-4">{% trans "Acerca de nosotros" %}</h2>
-                    <p>{% trans "Bienvenidos a Mamma Mia, donde la tradición italiana..." %}</p>
-                    <p>{% trans "Desde nuestra masa artesanal..." %}</p>
+    <!-- About Section -->
+    <div id="about" class="container-fluid wow fadeIn" data-wow-duration="1.5s">
+        <div class="row">
+            <div class="col-lg-6 has-img-bg"></div>
+            <div class="col-lg-6">
+                <div class="row justify-content-center">
+                    <div class="col-sm-8 py-5 my-5">
+                        <h2 class="mb-4">Acerca de nosotros</h2>
+                        <p>{% trans "Bienvenidos a Mamma Mia, donde la tradición italiana se encuentra con la innovación culinaria. Nuestra pizzería se enorgullece de utilizar solo los ingredientes más auténticos, desde la harina de trigo italiano hasta el queso mozzarella fresco, todos seleccionados con esmero. Pero no nos detenemos ahí: nuestras recetas reinventan clásicos atemporales, fusionando sabores tradicionales con toques modernos." %}</p>
+                        <p>{% trans "Desde nuestra masa artesanal, fermentada lentamente para lograr una textura perfecta, hasta combinaciones únicas de ingredientes frescos y salsas caseras, cada pizza cuenta una historia. En Mamma Mia, cada bocado es un viaje a Italia, pero con un giro contemporáneo que deleitará tu paladar. Ven a disfrutar de una experiencia gastronómica que celebra lo mejor de la cocina italiana, con un enfoque creativo y apasionado. ¡Te esperamos!" %}</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Sección de Nuestra Selección: Mostrar una pizza de cada masa -->
-<div id="nuestraseleccion" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
-    <h2 class="section-title">{% trans "NUESTRA SELECCION" %}</h2>
-</div>
-<div class="gallary row">
-    {% for masa, pizza in pizzas_por_masa.items %}
-    <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img src="{{ pizza.imagen_url }}" alt="Foto de {{ masa.nombre }}" class="gallary-img">
-        <a href="{% url 'pizza_desc' pizza.nombre %}" class="gallary-overlay">
-            <p class="h5 white">Masa {{ masa.nombre }}: {{ pizza.nombre }} - {{ pizza.precio }} €</p>
-        </a>
+    <!--Seccion de nuestra seleccion: Mostrar una pizza de cada masa -->
+    <div id="nuestraseleccion" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
+        <h2 class="section-title">{% trans "NUESTRA SELECCION" %}</h2>
     </div>
+    <div class="gallary row">
+        {% for masa, pizza in pizzas_por_masa.items %}
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="{{ pizza.imagen_url }}" alt="Foto de {{ masa.nombre }}" class="gallary-img">
+            <a href="{% url 'pizza_desc' pizza.nombre %}" class="gallary-overlay">
+                <p class="h5 white">Masa {{ masa.nombre }}: {{ pizza.nombre }} - {{ pizza.precio }} €</p>
+            </a>
+        </div>
     {% endfor %}
-</div>
+    </div>
+
+    <!-- Pizza Base Section -->
+    <div id="masas" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
+        <h2 class="section-title">{% trans "NUESTRAS MASAS" %}</h2>
+    </div>
+    <div class="gallary row">
+        {%for masa in masas%}
+            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+                <img src="{{ masa.imagen_url }}" alt="Foto de {{masa.nombre}}" class="gallary-img">
+                <a href="{% url 'pizzas' masa.nombre|slugify %}" class="gallary-overlay">
+                    <span class="h3 white">Masa {{masa.nombre}}</span>
+                </a>
+            </div>
+        {%endfor%}
+    </div>
+
+    <!-- Ingredients Section -->
+    <div id="ingredientes" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
+        <h2 class="section-title">{% trans "NUESTROS INGREDIENTES" %}</h2>
+    </div>
+    <div class="gallary row">
+        {%for ingrediente in ingredientes%}
+            <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+                <img src="{{ ingrediente.imagen_url }}" alt="{{ingrediente.nombre}}" class="gallary-img">
+                <a href="{% url 'ingrediente_desc' ingrediente.nombre %}" class="gallary-overlay">
+                    <span class="h3 white">{{ingrediente.nombre}}</span>
+                </a>
+            </div>
+       {%endfor%}
+    </div>
 
     <!-- Pizza Base Section -->
     <div id="masas" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
