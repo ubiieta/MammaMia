@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-07 13:56+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+#: .\MammaMia\settings.py:115
+msgid "English"
+msgstr ""
+
+#: .\MammaMia\settings.py:116
+msgid "Español"
+msgstr ""
+
+#: .\MammaMia\urls.py:32
+msgid "admin/"
+msgstr ""
+
+#: .\appMammaMia\templates\index.html:12
+msgid "Pizzas auténticas"
+msgstr ""
+
+#: .\appMammaMia\templates\index.html:25
+msgid ""
+"Bienvenidos a Mamma Mia, donde la tradición italiana se encuentra con la "
+"innovación culinaria. Nuestra pizzería se enorgullece de utilizar solo los "
+"ingredientes más auténticos, desde la harina de trigo italiano hasta el "
+"queso mozzarella fresco, todos seleccionados con esmero. Pero no nos "
+"detenemos ahí: nuestras recetas reinventan clásicos atemporales, fusionando "
+"sabores tradicionales con toques modernos."
+msgstr ""
+
+#: .\appMammaMia\templates\index.html:26
+msgid ""
+"Desde nuestra masa artesanal, fermentada lentamente para lograr una textura "
+"perfecta, hasta combinaciones únicas de ingredientes frescos y salsas "
+"caseras, cada pizza cuenta una historia. En Mamma Mia, cada bocado es un "
+"viaje a Italia, pero con un giro contemporáneo que deleitará tu paladar. Ven "
+"a disfrutar de una experiencia gastronómica que celebra lo mejor de la "
+"cocina italiana, con un enfoque creativo y apasionado. ¡Te esperamos!"
+msgstr ""
+
+#: .\appMammaMia\templates\index.html:34
+msgid "NUESTRA SELECCION"
+msgstr ""
+
+#: .\appMammaMia\templates\index.html:49
+msgid "NUESTRAS MASAS"
+msgstr ""
+
+#: .\appMammaMia\templates\index.html:64
+msgid "NUESTROS INGREDIENTES"
+msgstr ""
+
+#: .\appMammaMia\templates\index.html:81
+msgid "RESERVAR MESA"
+msgstr ""
+
+#: .\appMammaMia\templates\index.html:98
+msgid "BUSCAR MESA"
+msgstr ""
+
+#: .\appMammaMia\templates\index.html:108
+msgid "RESEÑAS"
+msgstr ""
+
+#: .\appMammaMia\templates\index.html:147
+msgid "ENCUENTRANOS"
+msgstr ""
+
+#: .\appMammaMia\templates\index.html:148
+msgid ""
+"¡Descubre nuestra pizzería en el corazón de San Sebastián! Ubicados en una "
+"zona privilegiada, te ofrecemos un ambiente acogedor y familiar, ideal para "
+"disfrutar de deliciosas pizzas. Ven a visitarnos y déjate sorprender por "
+"nuestros sabores únicos, perfectos para compartir con amigos y familiares. "
+"¡Te esperamos para que vivas una experiencia culinaria inolvidable!"
+msgstr ""
