@@ -1,12 +1,9 @@
 from django.shortcuts import get_object_or_404, redirect, render
-<<<<<<< HEAD
 from django.http import HttpResponse, JsonResponse
 from .models import Masa, Pizza, Ingrediente, Reserva
-=======
 from django.http import HttpResponse
 from .models import Masa, Pizza, Ingrediente, Reserva, Reserva
 from .forms import ReservaForm
->>>>>>> 41e45179cac0d7c69c9bdb40c06c0e8191aa3da5
 
 def index(request):
     masas = Masa.objects.all()
