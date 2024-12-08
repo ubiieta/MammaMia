@@ -10,8 +10,5 @@ urlpatterns = [
  path('descripcion_de_pizza/<str:p_nombre>/', views.pizza_desc, name='pizza_desc'),
  path('reservar_mesa/', views.reservar_mesa, name='reservar_mesa'),
  path('reserva_success/<int:reserva_id>/', views.reserva_success, name='reserva_success'),
-]
-
-urlpatterns = [
-    path('pizzas_por_masa/<int:masa_id>/', views.pizzas_por_masa, name='pizzas_por_masa'),
+ path('pizzas_por_masa/<int:masa_id>/', views.pizzas_por_masa, name='pizzas_por_masa'),
 ]

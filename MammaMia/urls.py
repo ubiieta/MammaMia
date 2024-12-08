@@ -23,13 +23,13 @@ from django.utils.translation import gettext_lazy as _
 
 
 urlpatterns = [
- path('', include('appMammaMia.urls')),
- path('admin/', admin.site.urls),
- path('i18n/', include('django.conf.urls.i18n')),
+    path('admin/', admin.site.urls),
+    path('i18n/', include('django.conf.urls.i18n')),  # Para soporte de idiomas
+    path('', include('appMammaMia.urls')),  # Cargar las URLs de tu app
 ]
 
+# Usar i18n_patterns para manejar el idioma por defecto y las rutas de administración
 urlpatterns += i18n_patterns(
     path(_('admin/'), admin.site.urls),  
-    path('', include('appMammaMia.urls')), 
-    prefix_default_language=False, 
+    prefix_default_language=False,  # No se agregará el idioma por defecto a la URL
 )
