@@ -41,10 +41,10 @@
                         <a class="navbar-link" href="/index.html#nuestraseleccion">Pizzas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-link" href="/index.html#masas">Masas</a>
+                        <a class="navbar-link" href="/index.html#masas">{% trans "Masas" %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-link" href="/index.html#ingredientes">Ingredientes</a>
+                        <a class="navbar-link" href="/index.html#ingredientes">{% trans "Ingredientes" %}</a>
                     </li>                    
                 </ul>
                 <a class="navbar-brand m-auto" href="/index.html">
@@ -54,12 +54,12 @@
                 <ul class="navbar-nav">
                    <!-- nav vacio para centrar el logo -->
                    <li class="nav-item">
-                        <a class="navbar-link" href="/index.html#book-table">Reservar mesa</a>
+                        <a class="navbar-link" href="/index.html#book-table">{% trans "Reservar mesa" %}</a>
                     </li>
                     <!-- Selector de idioma como botones -->
                     <li class="language-selector ml-auto">
-                        <a href="?lang=es" class="navbar-link {% if LANGUAGE_CODE == 'es' %}active{% endif %}" style="padding: 10px;">ES</a>
-                        <a href="?lang=en" class="navbar-link {% if LANGUAGE_CODE == 'en' %}active{% endif %}" style="padding: 10px;">EN</a>
+                        <a href="{% url 'set_language' %}?language=es" class="navbar-link">ES</a>
+                        <a href="{% url 'set_language' %}?language=en" class="navbar-link">EN</a>
                     </li>
                 </ul>
             </div>
@@ -74,15 +74,15 @@
             <div class="row">
                 <div class="col-sm-4">
                     <h3>VISITANOS</h3>
-                    <p class="text-muted">Lunes ~ Jueves (12:30-22:00)</p>
-                    <p class="text-muted">Viernes ~ Sabado (12:30-00:00)</p>
+                    <p class="text-muted">{% trans "Lunes ~ Jueves (12:30-22:00)" %}</p>
+                    <p class="text-muted">{% trans "Viernes ~ Sabado (12:30-00:00)" %}</p>
                 </div>
                 <div class="col-sm-4">
-                    <h3>LLAMANOS</h3>
+                    <h3>{% trans "LLAMANOS" % }</h3>
                     <p class="text-muted">942 39 22 40</p>
                 </div>
                 <div class="col-sm-4">
-                    <h3>ESCRIBENOS</h3>
+                    <h3>{% trans "ESCRIBENOS" %}</h3>
                     <p class="text-muted"><a href="mailto:help@mimadre.shop">help@mimadre.shop</a></p>
                 </div>
             </div>
