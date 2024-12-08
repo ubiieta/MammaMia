@@ -56,13 +56,12 @@
                    <li class="nav-item">
                         <a class="navbar-link" href="/index.html#book-table">Reservar mesa</a>
                     </li>
+                    <!-- Selector de idioma como botones -->
+                    <li class="language-selector ml-auto">
+                        <a href="?lang=es" class="navbar-link {% if LANGUAGE_CODE == 'es' %}active{% endif %}" style="padding: 10px;">ES</a>
+                        <a href="?lang=en" class="navbar-link {% if LANGUAGE_CODE == 'en' %}active{% endif %}" style="padding: 10px;">EN</a>
+                    </li>
                 </ul>
-                
-                <!-- Selector de idioma como botones -->
-                <div class="language-selector ml-auto">
-                    <a href="?lang=es" class="navbar-link" style="padding: 10px;">ES</a>
-                    <a href="?lang=en" class="navbar-link" style="padding: 10px;">EN</a>
-                </div>
             </div>
         </nav>
 

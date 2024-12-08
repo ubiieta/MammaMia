@@ -120,7 +120,7 @@ LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'es'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
