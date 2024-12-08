@@ -1,7 +1,12 @@
 from django.shortcuts import get_object_or_404, redirect, render
+<<<<<<< HEAD
+from django.http import HttpResponse, JsonResponse
+from .models import Masa, Pizza, Ingrediente, Reserva
+=======
 from django.http import HttpResponse
 from .models import Masa, Pizza, Ingrediente, Reserva, Reserva
 from .forms import ReservaForm
+>>>>>>> 41e45179cac0d7c69c9bdb40c06c0e8191aa3da5
 
 def index(request):
     masas = Masa.objects.all()
@@ -33,7 +38,16 @@ def ingrediente_desc(request, i_nombre):
     pizzas = Pizza.objects.filter(ingredientes__nombre__iexact=i_nombre)
     return render(request, "ingrediente.html", {'ingrediente': ingrediente, 'pizzas':pizzas})
 
+def pizzas_por_masa(request, masa_id):
+    masa = get_object_or_404(Masa, id=masa_id)
+    pizzas = masa.pizza_set.all()
 
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        data = {
+            'pizzas': list(pizzas.values('id', 'nombre', 'descripcion', 'precio'))
+        }
+        return JsonResponse(data)
+    return render(request, "pizzas.html", {'masa': masa, 'pizzas': pizzas})
 
 
 # def reservar_mesa(request):

@@ -60,6 +60,21 @@
         {%endfor%}
     </div>
 
+    <div>
+        <label for="masa-select">Selecciona un tipo de masa:</label>
+        <select id="masa-select">
+            <option value="">-- Selecciona una masa --</option>
+            {% for masa in masas %}
+            <option value="{{ masa.id }}">{{ masa.nombre }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    
+    <div id="pizza-list">
+        <p>Selecciona un tipo de masa para ver las pizzas disponibles.</p>
+    </div>
+    
+
     <!-- Ingredients Section -->
     <div id="ingredientes" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
         <h2 class="section-title">{% trans "NUESTROS INGREDIENTES" %}</h2>
