@@ -56,6 +56,7 @@ def ingrediente_desc(request, i_nombre):
 
 
 
+
 def reservar_mesa(request):
     if request.method == 'POST':
         form = ReservaForm(request.POST)
@@ -63,9 +64,9 @@ def reservar_mesa(request):
             reserva = form.save()
             return redirect('reserva_success', reserva_id=reserva.id)
     else:
-        form = ReservaForm()
-    return render(request, 'reservar_mesa.html', {'form': form})
-
+        form = ReservaForm()  # Se crea un formulario vacío si es un GET
+    
+    return render(request, 'index.html', {'form': form})  
 
 def reserva_success(request, reserva_id):
     reserva = get_object_or_404(Reserva, id=reserva_id) 

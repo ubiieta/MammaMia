@@ -75,34 +75,32 @@
        {%endfor%}
     </div>
 
-    <!-- Book a Table Section -->
-    <div class="container-fluid has-bg-overlay text-center text-light has-height-lg middle-items" id="book-table">
-        <div class="">
-            <br><br><br><br><br><br><br>
-            <h2 class="section-title mb-5">{% trans "RESERVA MESA" %}</h2>
-            <form method="post" action="{% url 'reservar_mesa' %}">
-                {% csrf_token %}
-                <div class="row mb-5">
-                    <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-                        <input type="number" name="booktable-guests" class="form-control form-control-lg custom-form-control" placeholder="NUMERO DE COMENSALES" max="20" min="1">
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-                        <input type="time" name="booktable-time" class="form-control form-control-lg custom-form-control">
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-                        <input type="date" name="booktable-date" class="form-control form-control-lg custom-form-control">
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-                        <input type="email" name="booktable-email" class="form-control form-control-lg custom-form-control" placeholder="EMAIL">
-                    </div>
+  <!-- Book a Table Section -->
+<div class="container-fluid has-bg-overlay text-center text-light has-height-lg middle-items" id="book-table">
+    <div class="">
+        <h2 class="section-title mb-5">RESERVA MESA</h2>
+        <form method="post" action="{% url 'reservar_mesa' %}">
+            {% csrf_token %}
+            <div class="row mb-5">
+                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                    <input type="number" name="npersonas" class="form-control form-control-lg custom-form-control" placeholder="NUMERO DE COMENSALES" min="1" max="20" required>
                 </div>
-                <button type="submit" class="btn btn-lg btn-primary" id="rounded-btn">{% trans "BUSCAR MESA" %}</button>
-                <br><br><br><br><br><br><br>
-
-            </form>
-        </div>
-            
+                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                    <input type="time" name="hora" class="form-control form-control-lg custom-form-control" required>
+                </div>
+                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                    <input type="date" name="fecha" class="form-control form-control-lg custom-form-control" required>
+                </div>
+                <div class="col-sm-6 col-md-3 col-xs-12 my-2">
+                    <input type="email" name="email" class="form-control form-control-lg custom-form-control" placeholder="EMAIL" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary" id="rounded-btn">BUSCAR MESA</button>
+        </form>
     </div>
+</div>
+
+
 
     <!-- Reviews Section FALTA LINKEARLO CON LA BD TAMBIEN -->
     <div id="testmonial" class="container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">

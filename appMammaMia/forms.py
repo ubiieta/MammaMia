@@ -14,11 +14,11 @@ class ReservaForm(forms.ModelForm):
             }),
             'hora': forms.TimeInput(attrs={
                 'class': 'form-control form-control-lg custom-form-control',
-                'type': 'time',  # Asegura que sea un campo HTML <input type="time">
+                'type': 'time',
             }),
             'fecha': forms.DateInput(attrs={
                 'class': 'form-control form-control-lg custom-form-control',
-                'type': 'date',  # Asegura que sea un campo HTML <input type="date">
+                'type': 'date',
             }),
             'email': forms.EmailInput(attrs={
                 'class': 'form-control form-control-lg custom-form-control',
