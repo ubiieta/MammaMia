@@ -1,6 +1,12 @@
 from django.shortcuts import get_object_or_404, redirect, render
+<<<<<<< HEAD
 from django.http import HttpResponse, JsonResponse
 from .models import Masa, Pizza, Ingrediente, Reserva
+=======
+from django.http import HttpResponse
+from .models import Masa, Pizza, Ingrediente, Reserva, Reserva
+from .forms import ReservaForm
+>>>>>>> 41e45179cac0d7c69c9bdb40c06c0e8191aa3da5
 
 def index(request):
     masas = Masa.objects.all()
@@ -44,23 +50,36 @@ def pizzas_por_masa(request, masa_id):
     return render(request, "pizzas.html", {'masa': masa, 'pizzas': pizzas})
 
 
+# def reservar_mesa(request):
+#     if request.method == 'POST':
+#         npersonas = request.POST.get('booktable-guests')
+#         hora = request.POST.get('booktable-time')
+#         fecha = request.POST.get('booktable-date')
+#         email = request.POST.get('booktable-email')
+
+#         if npersonas and hora and fecha and email:
+#             reserva = Reserva(
+#                 npersonas = int(npersonas),
+#                 hora = hora,
+#                 fecha = fecha,
+#                 email = email
+#             )
+#             reserva.save()
+#             return redirect('reserva_success', reserva_id=reserva.id)  #página de éxito
+#     return redirect('index')#de vuelta al loby literal
+
+
+
 def reservar_mesa(request):
     if request.method == 'POST':
-        npersonas = request.POST.get('booktable-guests')
-        hora = request.POST.get('booktable-time')
-        fecha = request.POST.get('booktable-date')
-        email = request.POST.get('booktable-email')
+        form = ReservaForm(request.POST)
+        if form.is_valid():
+            reserva = form.save()
+            return redirect('reserva_success', reserva_id=reserva.id)
+    else:
+        form = ReservaForm()
+    return render(request, 'reservar_mesa.html', {'form': form})
 
-        if npersonas and hora and fecha and email:
-            reserva = Reserva(
-                npersonas = int(npersonas),
-                hora = hora,
-                fecha = fecha,
-                email = email
-            )
-            reserva.save()
-            return redirect('reserva_success', reserva_id=reserva.id)  #página de éxito
-    return redirect('index')#de vuelta al loby literal
 
 def reserva_success(request, reserva_id):
     reserva = get_object_or_404(Reserva, id=reserva_id) 
