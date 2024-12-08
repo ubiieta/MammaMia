@@ -75,7 +75,7 @@ def reservar_mesa(request):
             reserva = form.save()
             return redirect('reserva_success', reserva_id=reserva.id)
     else:
-        form = ReservaForm()  # Se crea un formulario vacío si es un GET
+        form = ReservaForm() 
     
     return render(request, 'index.html', {'form': form})  
 
