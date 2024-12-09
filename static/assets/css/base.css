@@ -22,25 +22,6 @@
     text-align: center;
 }
 
-.language-selector {
-    margin-left: auto;
-    padding: 10px;
-}
-
-.language-selector select {
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    padding-left: 20px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.language-selector select:focus {
-    outline: none;
-}
-
 #error-message {
     color: red;
     font-size: 0.9rem;
