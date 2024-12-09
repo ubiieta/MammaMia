@@ -1,0 +1,22 @@
+[
+    {
+        "model": "appMammaMia.masa",
+        "pk": 1,
+        "fields": {
+            "nombre": "Tradicional",
+            "descripcion": "Masa de estilo tradicional italiana.",
+            "precio_extra": 0,
+            "imagen": "img/masa_tradicional.jpg"
+        }
+    },
+    {
+        "model": "appMammaMia.masa",
+        "pk": 2,
+        "fields": {
+            "nombre": "Integral",
+            "descripcion": "Masa con harina integral.",
+            "precio_extra": 1.5,
+            "imagen": "img/masa_integral.jpg"
+        }
+    }
+]
