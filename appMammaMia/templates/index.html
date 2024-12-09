@@ -93,7 +93,7 @@
   <!-- Book a Table Section -->
 <div class="container-fluid has-bg-overlay text-center text-light has-height-lg middle-items" id="book-table">
     <div class="">
-        <h2 class="section-title mb-5">RESERVA MESA</h2>
+        <h2 class="section-title mb-5">{% trans "RESERVA MESA" %}</h2>
         <form method="post" action="{% url 'reservar_mesa' %}">
             {% csrf_token %}
             <div class="row mb-5">
@@ -110,7 +110,7 @@
                     <input type="email" name="email" class="form-control form-control-lg custom-form-control" placeholder="EMAIL" required>
                 </div>
             </div>
-            <button type="submit" class="btn btn-lg btn-primary" id="rounded-btn">BUSCAR MESA</button>
+            <button type="submit" class="btn btn-lg btn-primary" id="rounded-btn">{% trans "BUSCAR MESA" %}</button>
         </form>
     </div>
 </div>
