@@ -64,7 +64,7 @@ msgstr "Authentic pizzas"
 
 #: .\appMammaMia\templates\index.html:14
 msgid "Nuestro menú"
-msgstr ""Our menu""
+msgstr "Our menu"
 
 #: .\appMammaMia\templates\index.html:25
 msgid "Acerca de nosotros"
