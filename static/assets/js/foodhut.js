@@ -46,61 +46,66 @@ function initMap() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    const masaSelect = document.getElementById('masa-select');
+    const pizzaList = document.getElementById('pizza-list');
     const form = document.getElementById('reserva-form');
     const errorMessage = document.getElementById('error-message');
 
-    form.addEventListener('submit', function (event) {
-        const guests = document.getElementById('booktable-guests').value;
-        const time = document.getElementById('booktable-time').value;
-        const date = document.getElementById('booktable-date').value;
-        const email = document.getElementById('booktable-email').value;
+    // Validación del formulario
+    if (form) {
+        form.addEventListener('submit', function (event) {
+            const guests = document.getElementById('booktable-guests').value;
+            const time = document.getElementById('booktable-time').value;
+            const date = document.getElementById('booktable-date').value;
+            const email = document.getElementById('booktable-email').value;
 
-        if (!guests || !time || !date || !email) {
-            event.preventDefault(); 
-            errorMessage.style.display = 'block';
-            errorMessage.textContent = 'Todos los campos son obligatorios.';
-        } else {
-            errorMessage.style.display = 'none'; 
-        }
-    });
+            if (!guests || !time || !date || !email) {
+                event.preventDefault();
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = 'Todos los campos son obligatorios.';
+            } else {
+                errorMessage.style.display = 'none';
+            }
+        });
+    }
 
-    const masaSelect = document.getElementById('masa-select');
-    const pizzaList = document.getElementById('pizza-list');
+    // Carga dinámica de pizzas
+    if (masaSelect) {
+        masaSelect.addEventListener('change', function () {
+            const masaId = this.value;
 
-    masaSelect.addEventListener('change', function () {
-        const masaId = this.value;
+            if (masaId) {
+                fetch(`/pizzas_por_masa/${masaId}/`, {
+                    headers: {
+                        'x-requested-with': 'XMLHttpRequest'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    pizzaList.innerHTML = '';
 
-        if (masaId) {
-            fetch(`/pizzas_por_masa/${masaId}/`, {
-                headers: {
-                    'x-requested-with': 'XMLHttpRequest'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                pizzaList.innerHTML = '';
-
-                if (data.pizzas.length > 0) {
-                    data.pizzas.forEach(pizza => {
-                        const pizzaDiv = document.createElement('div');
-                        pizzaDiv.classList.add('pizza-card');
-                        pizzaDiv.innerHTML = `
-                            <h4>${pizza.nombre}</h4>
-                            <p>${pizza.descripcion}</p>
-                            <p>Precio: €${pizza.precio}</p>
-                        `;
-                        pizzaList.appendChild(pizzaDiv);
-                    });
-                } else {
-                    pizzaList.innerHTML = '<p>No hay pizzas disponibles para esta masa.</p>';
-                }
-            })
-            .catch(error => {
-                console.error('Error al cargar las pizzas:', error);
-                pizzaList.innerHTML = '<p>Hubo un error al cargar las pizzas. Intenta de nuevo.</p>';
-            });
-        } else {
-            pizzaList.innerHTML = '<p>Selecciona un tipo de masa para ver las pizzas disponibles.</p>';
-        }
-    });
+                    if (data.pizzas.length > 0) {
+                        data.pizzas.forEach(pizza => {
+                            const pizzaDiv = document.createElement('div');
+                            pizzaDiv.classList.add('pizza-card');
+                            pizzaDiv.innerHTML = `
+                                <h4>${pizza.nombre}</h4>
+                                <p>${pizza.descripcion}</p>
+                                <p>Precio: €${pizza.precio}</p>
+                            `;
+                            pizzaList.appendChild(pizzaDiv);
+                        });
+                    } else {
+                        pizzaList.innerHTML = '<p>No hay pizzas disponibles para esta masa.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al cargar las pizzas:', error);
+                    pizzaList.innerHTML = '<p>Hubo un error al cargar las pizzas. Intenta de nuevo.</p>';
+                });
+            } else {
+                pizzaList.innerHTML = '<p>Selecciona un tipo de masa para ver las pizzas disponibles.</p>';
+            }
+        });
+    }
 });
