@@ -1,0 +1,28 @@
+[
+    {
+        "model": "appMammaMia.pizza",
+        "pk": 1,
+        "fields": {
+            "nombre": "Margarita",
+            "descripcion": "Pizza clásica con tomate, queso y albahaca.",
+            "precio": 8,
+            "tiempo_preparacion": 15,
+            "imagen": "img/margarita.jpg",
+            "masa": 1,
+            "ingredientes": [1]
+        }
+    },
+    {
+        "model": "appMammaMia.pizza",
+        "pk": 2,
+        "fields": {
+            "nombre": "Pepperoni",
+            "descripcion": "Pizza con rodajas de pepperoni y queso.",
+            "precio": 10,
+            "tiempo_preparacion": 20,
+            "imagen": "img/pepperoni_pizza.jpg",
+            "masa": 1,
+            "ingredientes": [1, 2]
+        }
+    }
+]

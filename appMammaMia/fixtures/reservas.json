@@ -1,0 +1,22 @@
+[
+    {
+        "model": "appMammaMia.reserva",
+        "pk": 1,
+        "fields": {
+            "npersonas": 4,
+            "hora": "20:00:00",
+            "fecha": "2024-12-15",
+            "email": "cliente1@example.com"
+        }
+    },
+    {
+        "model": "appMammaMia.reserva",
+        "pk": 2,
+        "fields": {
+            "npersonas": 2,
+            "hora": "21:30:00",
+            "fecha": "2024-12-16",
+            "email": "cliente2@example.com"
+        }
+    }
+]
