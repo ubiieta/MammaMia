@@ -11,7 +11,7 @@
         <div class="overlay text-white text-center">
             <h1 class="display-2 font-weight-bold my-3">Mamma mia!</h1>
             <h2 class="display-4 mb-5">{% trans "Pizzas auténticas" %}</h2>
-            <a class="btn btn-lg btn-primary" href="#gallary">{% trans "Nuestro menú" %}</a>
+            <a class="btn btn-lg btn-primary" href="#masas">{% trans "Nuestro menú" %}</a>
         </div>
     </header>
 
@@ -30,6 +30,7 @@
             </div>
         </div>
     </div>
+
     <!--Seccion de nuestra seleccion: Mostrar una pizza de cada masa -->
     <div id="nuestraseleccion" class="container-fluid has-bg-overlay-gray text-center text-light has-height-lg middle-items">
         <h2 class="section-title">{% trans "NUESTRA SELECCION" %}</h2>
@@ -37,7 +38,7 @@
     <div class="gallary row">
         {% for masa, pizza in pizzas_por_masa.items %}
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-            <img src="{{ pizza.imagen_url }}" alt="Foto de {{ masa.nombre }}" class="gallary-img">
+            <img src="{{ pizza.imagen.url }}" alt="Foto de {{ masa.nombre }}" class="gallary-img">
             <a href="{% url 'pizza_desc' pizza.nombre %}" class="gallary-overlay">
                 <p class="h5 white">Masa {{ masa.nombre }}: {{ pizza.nombre }} - {{ pizza.precio }} €</p>
             </a>
@@ -52,9 +53,13 @@
     <div class="gallary row">
         {%for masa in masas%}
             <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-                <img src="{{ masa.imagen_url }}" alt="Foto de {{masa.nombre}}" class="gallary-img">
+                {% if masa.imagen %}
+                    <img src="{{ masa.imagen.url }}" alt="Foto de {{ masa.nombre }}" class="gallary-img">
+                {% else %}
+                    <img src="{% static 'static\assets\imgs\logo.png' %}" alt="Imagen predeterminada" class="gallary-img"> <!--por si acaso la imagen no va para que no se caiga la pagina-->
+                {% endif %}
                 <a href="{% url 'pizzas' masa.nombre|slugify %}" class="gallary-overlay">
-                    <span class="h3 white">Masa {{masa.nombre}}</span>
+                    <span class="h3 white">Masa {{ masa.nombre }}</span>
                 </a>
             </div>
         {%endfor%}
@@ -82,7 +87,7 @@
     <div class="gallary row">
         {%for ingrediente in ingredientes%}
             <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-                <img src="{{ ingrediente.imagen_url }}" alt="{{ingrediente.nombre}}" class="gallary-img">
+                <img src="{{ ingrediente.imagen.url }}" alt="{{ingrediente.nombre}}" class="gallary-img">
                 <a href="{% url 'ingrediente_desc' ingrediente.nombre %}" class="gallary-overlay">
                     <span class="h3 white">{{ingrediente.nombre}}</span>
                 </a>
