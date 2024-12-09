@@ -87,11 +87,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (data.pizzas.length > 0) {
                         data.pizzas.forEach(pizza => {
                             const pizzaDiv = document.createElement('div');
-                            pizzaDiv.classList.add('pizza-card');
+                            pizzaDiv.classList.add('col-sm-6', 'col-lg-3', 'gallary-item', 'wow', 'fadeIn');
+
                             pizzaDiv.innerHTML = `
-                                <h4>${pizza.nombre}</h4>
-                                <p>${pizza.descripcion}</p>
-                                <p>Precio: €${pizza.precio}</p>
+                                <div class="pizza-card">
+                                    <div class="pizza-img">
+                                        <img src="${pizza.imagen_url}" alt="${pizza.nombre}" class="img-fluid">
+                                    </div>
+                                    <div class="pizza-info">
+                                        <h4>${pizza.nombre}</h4>
+                                        <p><strong>Precio:</strong> €${pizza.precio}</p>
+                                        <a href="/descripcion_de_pizza/${pizza.nombre}">Más información</a>
+                                    </div>
+                                </div>
                             `;
                             pizzaList.appendChild(pizzaDiv);
                         });
