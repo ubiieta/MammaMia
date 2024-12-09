@@ -34,6 +34,9 @@ def ingrediente_desc(request, i_nombre):
     ingrediente = get_object_or_404(Ingrediente, nombre__iexact=i_nombre)
     pizzas = Pizza.objects.filter(ingredientes__nombre__iexact=i_nombre)
     return render(request, "ingrediente.html", {'ingrediente': ingrediente, 'pizzas':pizzas})
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
+from .models import Masa
 
 def pizzas_por_masa(request, masa_id):
     masa = get_object_or_404(Masa, id=masa_id)
@@ -44,7 +47,8 @@ def pizzas_por_masa(request, masa_id):
             'pizzas': list(pizzas.values('id', 'nombre', 'descripcion', 'precio'))
         }
         return JsonResponse(data)
-    return render(request, "pizzas.html", {'masa': masa, 'pizzas': pizzas})
+
+    return JsonResponse({'error': 'No es una solicitud AJAX'}, status=400)
 
 
 # def reservar_mesa(request):
