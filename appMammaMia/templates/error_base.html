@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Página de error de MammaMia!">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="{% static 'assets/css/base.css' %}">
+    <title>{% block title %}Error{% endblock %}</title>
+</head>
+<body>
+
+    <header class="error-header">
+        <img src="{% static 'assets/imgs/logo.png' %}" alt="Logo de MammaMia" class="error-logo">
+    </header>
+
+    <div class="error-message">
+        <h1>{% block error_message %}Algo salió mal{% endblock %}</h1>
+        <p>{% block error_description %}Lo sentimos, algo no ha ido como esperábamos. Por favor, vuelve más tarde.{% endblock %}</p>
+    </div>
+
+    <footer class="error-footer">
+        <p>© 2024 MammaMia! | Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
