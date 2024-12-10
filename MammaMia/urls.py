@@ -15,17 +15,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
     Estoy cambiando esto para ver como se hace un push jajaj
 """
-from django.conf import settings
+
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.urls import path, include
 from django.utils.translation import gettext_lazy as _
+from django.conf.urls.i18n import set_language
+from appMammaMia  import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),  # Para soporte de idiomas
+    path('i18n/setlang/', set_language, name='set_language'),
+    path('test-language/', views.test_language, name='test_language'),
     path('', include('appMammaMia.urls')),  # Cargar las URLs de tu app
+
+     
 ]
 
 # Usar i18n_patterns para manejar el idioma por defecto y las rutas de administración

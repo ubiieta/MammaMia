@@ -5,6 +5,9 @@ from django.http import HttpResponse
 from .models import Masa, Pizza, Ingrediente, Reserva, Reserva
 from .forms import ReservaForm
 
+from django.http import HttpResponse
+from django.utils.translation import get_language
+
 def index(request):
     masas = Masa.objects.all()
     ingredientes = Ingrediente.objects.all()
@@ -95,3 +98,8 @@ def reservar_mesa(request):
 def reserva_success(request, reserva_id):
     reserva = get_object_or_404(Reserva, id=reserva_id) 
     return render(request, "reserva_success.html", {'reserva': reserva})
+
+
+
+def test_language(request):
+    return HttpResponse(f"Idioma actual: {get_language()}")

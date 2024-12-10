@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 12:09+0100\n"
+"POT-Creation-Date: 2024-12-10 11:00+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\MammaMia\settings.py:115
-msgid "English"
-msgstr ""
-
-#: .\MammaMia\settings.py:116
-msgid "Español"
-msgstr ""
-
-#: .\MammaMia\urls.py:33
+#: .\MammaMia\urls.py:38
 msgid "admin/"
 msgstr ""
 
@@ -42,42 +34,52 @@ msgstr "Ingredients"
 msgid "Reservar mesa"
 msgstr "Reserve a table"
 
-#: .\appMammaMia\templates\base.html:78
+#: .\appMammaMia\templates\base.html:79
+msgid "VISITANOS"
+msgstr "VISIT US"
+
+#: .\appMammaMia\templates\base.html:80
 msgid "Lunes ~ Jueves (12:30-22:00)"
 msgstr "Monday ~ Thursday (12:30 - 22:00)"
 
-#: .\appMammaMia\templates\base.html:79
+#: .\appMammaMia\templates\base.html:81
 msgid "Viernes ~ Sabado (12:30-00:00)"
 msgstr "Friday ~ Saturday (12:30 - 00:00)"
 
-#: .\appMammaMia\templates\base.html:82
+#: .\appMammaMia\templates\base.html:85
 msgid "LLAMANOS"
 msgstr "CALL US"
 
-#: .\appMammaMia\templates\base.html:86
+#: .\appMammaMia\templates\base.html:89
 msgid "ESCRIBENOS"
 msgstr "WRITE TO US"
 
-#: .\appMammaMia\templates\index.html:13
+#: .\appMammaMia\templates\index.html:16
 msgid "Pizzas auténticas"
 msgstr "Authentic pizzas"
 
-#: .\appMammaMia\templates\index.html:14
+#: .\appMammaMia\templates\index.html:17
 msgid "Nuestro menú"
 msgstr "Our menu"
 
-#: .\appMammaMia\templates\index.html:25
+#: .\appMammaMia\templates\index.html:28
 msgid "Acerca de nosotros"
 msgstr "About us"
 
-#: .\appMammaMia\templates\index.html:26
+#: .\appMammaMia\templates\index.html:29
+#, fuzzy
+#| msgid ""
+#| "Bienvenidos a Mamma Mia, donde la tradición italiana se encuentra con la "
+#| "innovación culinaria. Nuestra pizzería se enorgullece de utilizar solo "
+#| "los ingredientes más auténticos, desde la harina de trigo italiano hasta "
+#| "el queso mozzarella fresco, todos seleccionados con esmero. Pero no nos "
+#| "detenemos ahí: nuestras recetas reinventan clásicos atemporales, "
+#| "fusionando sabores tradicionales con toques modernos."
 msgid ""
 "Bienvenidos a Mamma Mia, donde la tradición italiana se encuentra con la "
 "innovación culinaria. Nuestra pizzería se enorgullece de utilizar solo los "
 "ingredientes más auténticos, desde la harina de trigo italiano hasta el "
-"queso mozzarella fresco, todos seleccionados con esmero. Pero no nos "
-"detenemos ahí: nuestras recetas reinventan clásicos atemporales, fusionando "
-"sabores tradicionales con toques modernos."
+"queso mozzarella fresco, todos seleccionados con esmero."
 msgstr ""
 "Welcome to Mamma Mia, where Italian tradition meets culinary innovation. Our "
 "pizzeria prides itself on using only the most authentic ingredients, from "
@@ -85,58 +87,72 @@ msgstr ""
 "we don't stop there: our recipes reinvent timeless classics, blending "
 "traditional flavors with modern touches."
 
-#: .\appMammaMia\templates\index.html:27
-msgid ""
-"Desde nuestra masa artesanal, fermentada lentamente para lograr una textura "
-"perfecta, hasta combinaciones únicas de ingredientes frescos y salsas "
-"caseras, cada pizza cuenta una historia. En Mamma Mia, cada bocado es un "
-"viaje a Italia, pero con un giro contemporáneo que deleitará tu paladar. Ven "
-"a disfrutar de una experiencia gastronómica que celebra lo mejor de la "
-"cocina italiana, con un enfoque creativo y apasionado. ¡Te esperamos!"
-msgstr ""
-"From our handcrafted dough, slowly fermented to achieve a perfect texture, "
-"to unique combinations of fresh ingredients and homemade sauces, each pizza "
-"tells a story. At Mamma Mia, every bite is a journey to Italy, but with a "
-"contemporary twist that will delight your taste buds. Come and enjoy a "
-"dining experience that celebrates the best of Italian cuisine, with a "
-"creative and passionate approach. We look forward to welcoming you!"
-
-#: .\appMammaMia\templates\index.html:35
+#: .\appMammaMia\templates\index.html:38
 msgid "NUESTRA SELECCION"
 msgstr "OUR SELECTION"
 
-#: .\appMammaMia\templates\index.html:50
+#: .\appMammaMia\templates\index.html:53
 msgid "NUESTRAS MASAS"
 msgstr "OUR DOUGHS"
 
-#: .\appMammaMia\templates\index.html:80
+#: .\appMammaMia\templates\index.html:71
+msgid "Filtrar pizzas por masa:"
+msgstr "Filter pizzas by dough:"
+
+#: .\appMammaMia\templates\index.html:73
+msgid "-- Selecciona una masa --"
+msgstr "-- Select a dough --"
+
+#: .\appMammaMia\templates\index.html:87
+#, fuzzy
+#| msgid "RESERVAR MESA"
+msgid "RESERVA MESA"
+msgstr "BOOK A TABLE"
+
+#: .\appMammaMia\templates\index.html:104
+msgid "BUSCAR MESA"
+msgstr "FIND A TABLE"
+
+#: .\appMammaMia\templates\index.html:105
+msgid "Por favor, completa todos los campos correctamente."
+msgstr "Please fill in all fields correctly."
+
+#: .\appMammaMia\templates\index.html:111
 msgid "NUESTROS INGREDIENTES"
 msgstr "OUR INGREDIENTS"
 
-#: .\appMammaMia\templates\index.html:122
-msgid "RESEÑAS"
-msgstr "REVIEWS"
+#~ msgid ""
+#~ "Desde nuestra masa artesanal, fermentada lentamente para lograr una "
+#~ "textura perfecta, hasta combinaciones únicas de ingredientes frescos y "
+#~ "salsas caseras, cada pizza cuenta una historia. En Mamma Mia, cada bocado "
+#~ "es un viaje a Italia, pero con un giro contemporáneo que deleitará tu "
+#~ "paladar. Ven a disfrutar de una experiencia gastronómica que celebra lo "
+#~ "mejor de la cocina italiana, con un enfoque creativo y apasionado. ¡Te "
+#~ "esperamos!"
+#~ msgstr ""
+#~ "From our handcrafted dough, slowly fermented to achieve a perfect "
+#~ "texture, to unique combinations of fresh ingredients and homemade sauces, "
+#~ "each pizza tells a story. At Mamma Mia, every bite is a journey to Italy, "
+#~ "but with a contemporary twist that will delight your taste buds. Come and "
+#~ "enjoy a dining experience that celebrates the best of Italian cuisine, "
+#~ "with a creative and passionate approach. We look forward to welcoming you!"
 
-#: .\appMammaMia\templates\index.html:161
-msgid "ENCUENTRANOS"
-msgstr "FIND US"
+#~ msgid "RESEÑAS"
+#~ msgstr "REVIEWS"
 
-#: .\appMammaMia\templates\index.html:162
-msgid ""
-"¡Descubre nuestra pizzería en el corazón de San Sebastián! Ubicados en una "
-"zona privilegiada, te ofrecemos un ambiente acogedor y familiar, ideal para "
-"disfrutar de deliciosas pizzas. Ven a visitarnos y déjate sorprender por "
-"nuestros sabores únicos, perfectos para compartir con amigos y familiares. "
-"¡Te esperamos para que vivas una experiencia culinaria inolvidable!"
-msgstr ""
-"Discover our pizzeria in the heart of San Sebastián! Located in a prime "
-"area, we offer a cozy and family-friendly atmosphere, perfect for enjoying "
-"delicious pizzas. Come visit us and let yourself be surprised by our unique "
-"flavors, ideal for sharing with friends and family. We look forward to "
-"welcoming you for an unforgettable culinary experience!"
+#~ msgid "ENCUENTRANOS"
+#~ msgstr "FIND US"
 
-#~ msgid "RESERVAR MESA"
-#~ msgstr "BOOK A TABLE"
-
-#~ msgid "BUSCAR MESA"
-#~ msgstr "FIND A TABLE"
+#~ msgid ""
+#~ "¡Descubre nuestra pizzería en el corazón de San Sebastián! Ubicados en "
+#~ "una zona privilegiada, te ofrecemos un ambiente acogedor y familiar, "
+#~ "ideal para disfrutar de deliciosas pizzas. Ven a visitarnos y déjate "
+#~ "sorprender por nuestros sabores únicos, perfectos para compartir con "
+#~ "amigos y familiares. ¡Te esperamos para que vivas una experiencia "
+#~ "culinaria inolvidable!"
+#~ msgstr ""
+#~ "Discover our pizzeria in the heart of San Sebastián! Located in a prime "
+#~ "area, we offer a cozy and family-friendly atmosphere, perfect for "
+#~ "enjoying delicious pizzas. Come visit us and let yourself be surprised by "
+#~ "our unique flavors, ideal for sharing with friends and family. We look "
+#~ "forward to welcoming you for an unforgettable culinary experience!"

@@ -68,9 +68,9 @@
 
  <div class="container text-center my-4">
     <div class="d-inline-block">
-        <label for="masa-select" class="form-label">Filtrar pizzas por masa:</label>
+        <label for="masa-select" class="form-label">{% trans "Filtrar pizzas por masa:" %}</label>
         <select id="masa-select" class="form-control">
-            <option value="">-- Selecciona una masa --</option>
+            <option value="">{% trans "-- Selecciona una masa --" %}</option>
             {% for masa in masas %}
                 <option value="{{ masa.id }}">{{ masa.nombre }}</option>
             {% endfor %}
@@ -102,7 +102,7 @@
             </div>
         </div>
         <button type="submit" class="btn btn-lg btn-primary" id="rounded-btn">{% trans "BUSCAR MESA" %}</button>
-        <p id="error-message" style="color: red; display: none;">Por favor, completa todos los campos correctamente.</p>
+        <p id="error-message" style="color: red; display: none;">{% trans "Por favor, completa todos los campos correctamente." %}</p>
     </form>
 </div>
 
