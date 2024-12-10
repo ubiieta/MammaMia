@@ -44,7 +44,16 @@ def pizzas_por_masa(request, masa_id):
 
     if request.headers.get('x-requested-with') == 'XMLHttpRequest':
         data = {
-            'pizzas': list(pizzas.values('id', 'nombre', 'descripcion', 'precio'))
+            'pizzas': [
+                {
+                    'id': pizza.id,
+                    'nombre': pizza.nombre,
+                    'descripcion': pizza.descripcion,
+                    'precio': pizza.precio,
+                    'imagen': pizza.imagen.url if pizza.imagen else None  # Obtén la URL completa
+                }
+                for pizza in pizzas
+            ]
         }
         return JsonResponse(data)
 

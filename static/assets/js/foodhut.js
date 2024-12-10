@@ -82,37 +82,43 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .then(response => response.json())
                 .then(data => {
+                    console.log('Datos recibidos:', data);  
+
                     pizzaList.innerHTML = '';
 
-                    if (data.pizzas.length > 0) {
-                        data.pizzas.forEach(pizza => {
-                            const pizzaDiv = document.createElement('div');
-                            pizzaDiv.classList.add('col-sm-6', 'col-lg-3', 'gallary-item', 'wow', 'fadeIn');
+                    const rowDiv = document.createElement('div'); 
+                        rowDiv.classList.add('row');
 
-                            pizzaDiv.innerHTML = `
-                                <div class="pizza-card">
-                                    <div class="pizza-img">
-                                        <img src="${pizza.imagen_url}" alt="${pizza.nombre}" class="img-fluid">
+                        if (data.pizzas.length > 0) {
+                            data.pizzas.forEach(pizza => {
+                                const pizzaDiv = document.createElement('div');
+                                pizzaDiv.classList.add('col-sm-6', 'col-lg-3', 'gallary-item', 'wow', 'fadeIn'); 
+                                pizzaDiv.innerHTML = `
+                                    <div class="pizza-card">
+                                        <div class="pizza-img">
+                                            <img src="${pizza.imagen}" alt="${pizza.nombre}" class="img-fluid">
+                                        </div>
+                                        <div class="pizza-info">
+                                            <h4>${pizza.nombre}</h4>
+                                            <p><strong>Precio:</strong> €${pizza.precio}</p>
+                                            <a href="/descripcion_de_pizza/${pizza.nombre}">Más información</a>
+                                        </div>
                                     </div>
-                                    <div class="pizza-info">
-                                        <h4>${pizza.nombre}</h4>
-                                        <p><strong>Precio:</strong> €${pizza.precio}</p>
-                                        <a href="/descripcion_de_pizza/${pizza.nombre}">Más información</a>
-                                    </div>
-                                </div>
-                            `;
-                            pizzaList.appendChild(pizzaDiv);
-                        });
+                                `;
+                                rowDiv.appendChild(pizzaDiv); 
+                            });
                     } else {
                         pizzaList.innerHTML = '<p>No hay pizzas disponibles para esta masa.</p>';
                     }
+                    pizzaList.appendChild(rowDiv); 
+
                 })
                 .catch(error => {
                     console.error('Error al cargar las pizzas:', error);
                     pizzaList.innerHTML = '<p>Hubo un error al cargar las pizzas. Intenta de nuevo.</p>';
                 });
             } else {
-                pizzaList.innerHTML = '<p>Selecciona un tipo de masa para ver las pizzas disponibles.</p>';
+                pizzaList.innerHTML = '<p>Seleccione una opción por favor.</p>';
             }
         });
     }
