@@ -1,0 +1,26 @@
+/* custom_admin.css */
+
+/* Estilo para la barra de navegación del admin */
+#header {
+    background-color: #3e8e41;
+    color: white;
+}
+
+#header a {
+    color: white;
+}
+
+/* Cambiar el color de fondo del panel lateral */
+#nav-sidebar {
+    background-color: #f1f1f1;
+}
+
+/* Resaltar los enlaces activos */
+#nav-sidebar li.active {
+    background-color: #3e8e41;
+}
+
+/* Agregar un poco de espacio a los formularios */
+form {
+    padding: 20px;
+}
